@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ukraine_css_js/gerichte.css">
+    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
+
+    <!-- importieren der Schriftarten -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="bodyContainer" data-barba="wrapper">
+
+        <!-- KOPFLEISTE MIT NAVIGATION -->
+        <header>
+            <a href="index.html">
+                <img id="header-logo" src="images/Logo_blue.svg" alt="The Global Kitchen Logo">
+            </a>
+
+            <!-- hier wird die Menüleiste gebaut -->
+            <nav>
+                <ul class="main-nav">
+                    <li class="dropdown">
+                        <a href="#">Länder</a>
+                        <ul class="menü-content">
+                            <li><a href="/Afrika.html">Afrika</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">Ägypten</a></li>
+                                    <li><a href="#">Äthiopien</a></li>
+                                    <li><a href="#">Algerien</a></li>
+                                    <li><a href="#">Ghana</a></li>
+                                    <li><a href="#">Kenia</a></li>
+                                    <li><a href="#">Marokko</a></li>
+                                    <li><a href="#">Nigeria</a></li>
+                                    <li><a href="#">Senegal</a></li>
+                                    <li><a href="#">Südafrika</a></li>
+                                    <li><a href="#">Tunesien</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Asien.html">Asien</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">China</a></li>
+                                    <li><a href="#">Indien</a></li>
+                                    <li><a href="#">Indonesien</a></li>
+                                    <li><a href="#">Japan</a></li>
+                                    <li><a href="#">Korea</a></li>
+                                    <li><a href="#">Philippinen</a></li>
+                                    <li><a href="#">Thailand</a></li>
+                                    <li><a href="#">Vietnam</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Australien.html">Australien</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">Australien</a></li>
+                                    <li><a href="#">Neuseeland</a></li>
+                                    <li><a href="#">Fidschi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Europa.html">Europa</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">Albanien</a></li>
+                                    <li><a href="#">Belgien</a></li>
+                                    <li><a href="#">Dänemark</a></li>
+                                    <li><a href="#">Deutschland</a></li>
+                                    <li><a href="#">Frankreich</a></li>
+                                    <li><a href="#">Griechenland</a></li>
+                                    <li><a href="#">Italien</a></li>
+                                    <li><a href="#">Kroatien</a></li>
+                                    <li><a href="#">Niederlande</a></li>
+                                    <li><a href="#">Österreich</a></li>
+                                    <li><a href="#">Polen</a></li>
+                                    <li><a href="#">Portugal</a></li>
+                                    <li><a href="#">Schweden</a></li>
+                                    <li><a href="#">Schweiz</a></li>
+                                    <li><a href="#">Spanien</a></li>
+                                    <li><a href="ukraine.html">Ukraine</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Nordamerika.html">Nordamerika</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">Kanada</a></li>
+                                    <li><a href="#">Mexiko</a></li>
+                                    <li><a href="#">USA</a></li>
+                                    <li><a href="#">Kuba</a></li>
+                                    <li><a href="#">Jamaika</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/Südamerika.html">Südamerika</a>
+                                <ul class="untermenü">
+                                    <li><a href="#">Argentinien</a></li>
+                                    <li><a href="#">Brasilien</a></li>
+                                    <li><a href="#">Chile</a></li>
+                                    <li><a href="#">Kolumbien</a></li>
+                                    <li><a href="#">Peru</a></li>
+                                    <li><a href="#">Uruguay</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Rezepte</a>
+                        <ul class="menü-content">
+                            <li><a href="/Vorspeisen.html">Vorspeisen</a></li>
+                            <li><a href="/Hauptgänge.html">Hauptgänge</a></li>
+                            <li><a href="/Desserts.html">Desserts</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/about.html">Kontakt</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- hier wird die Suchleiste erzeugt -->
+            <input id="headerSuchleiste" type="text" placeholder="Suche...">
+
+            <!-- hier wird die Sprachenauswahl hinzugefügt -->
+            <nav>
+                <ul class="main-nav">
+                    <li class="dropdown">
+
+                        <a href="#"><span id="sprachenicon">Deutsch</span></a>
+                        <ul class="menü-content">
+                            <li><a href="/English.html"><span class="icon">🇬🇧</span> English</a></li>
+                            <li><a href="/Español.html"><span class="icon">🇪🇸</span> Español</a></li>
+                            <li><a href="/Français.html"><span class="icon">🇫🇷</span> Français </a></li>
+                            <li><a href="/Italiano.html"><span class="icon">🇮🇹</span> Italiano</a></li>
+                            <li><a href="/Polski.html"><span class="icon">🇵🇱</span> Polski</a></li>
+                            <li><a href="/Русский.html"><span class="icon">🇷🇺</span> Русский</a></li>
+                            <li><a href="/Türkçe.html"><span class="icon">🇹🇷</span> Türkçe</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Button für darkmode -->
+            <button id="theme-switch">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path
+                        d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path
+                        d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                </svg>
+            </button>
+
+        </header>
+
+
+
+
+        <main data-barba="container">
+            <!-- HIER KANNST DU DEINEN INDIVIDUELLEN INHALT EINFÜGEN -->
+            <!-- ---------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+            <!-- ---------------------------------------------------------------- -->
+        </main>
+
+
+
+        <!-- FUßLEISTE -->
+        <footer>
+            <div class="footer-left">
+                <p>© 2026 The Global Kitchen</p>
+            </div>
+
+            <div class="footer-center">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <p>Social Media:</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="images/youtube.svg" alt="Youtube"></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ÜBERGANG ZWISCHEN DEN SEITEN -->
+    <div class="transition-overlay">
+        <img src="images/Logo_orange.svg" alt="Logo" class="overlay-logo">
+    </div>
+
+</body>
+
+</html>

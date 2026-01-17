@@ -1,0 +1,474 @@
+/* FARBEN */
+/* hier werden die Farben initialisiert, die dann überall im CSS genutzt werden sollten */
+:root {
+    --weborange: #F6523E;
+    --weborangelight: #FF7361;
+    --webblue: #37295A;
+    --webwhite: #FCFDF5;
+    --webgray: #E4E4E4;
+    --webblack: #1C1E1F;
+}
+
+/* :root {
+    --weborange: #3e41f6;
+    --weborangelight: #6179ff;
+    --webblue: #37295A;
+    --webwhite: #FCFDF5;
+    --webgray: #E4E4E4;
+    --webblack: #1C1E1F;
+} */
+
+/* Lightmode und Darkmode */
+.darkmode {
+    --weborange: #1C1E1F;
+    --weborangelight: #313131;
+    --webblue: #0f0f0f;
+    --webwhite: #cdcec6;
+    --webgray: #E4E4E4;
+    --webblack: #1C1E1F;
+}
+
+
+
+.darkmode #header-logo {
+    filter: brightness(5) saturate(0);
+}
+
+.darkmode .transition-overlay {
+    filter: brightness(2) invert() saturate(0);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 15px;
+    background-color: var(--weborange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    z-index: 951;
+}
+
+#theme-switch:hover {
+    cursor: pointer;
+    border: 2px solid;
+    border-color: var(--webwhite);
+}
+
+#theme-switch svg:hover {
+    transform: scale(1.1);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+/* SCHRIFTARTEN */
+/* hier werden die Schriftarten importiert */
+.chelsea-market-regular {
+    font-family: "Chelsea Market", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* hier werden den Schriftselektoren die Schriftarten und Schriftstile hinzugefügt */
+h1 {
+    font-family: "Chelsea Market", system-ui;
+    font-weight: 400;
+    font-size: 85pt;
+    font-style: normal;
+    line-height: 95%;
+}
+
+h2 {
+    font-family: "Chelsea Market", system-ui;
+    font-weight: 400;
+    font-size: 30pt;
+    font-style: normal;
+    line-height: 95%;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20pt;
+    font-style: normal;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12pt;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: var(--weborange);
+}
+
+#bodyContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* vh = Viewport Height (100% der Bildschirmhöhe) */
+}
+
+
+/* HEADER */
+/* hier werden die Stile für den Header gesetzt, der auf jeder Seite gleich ist */
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px 0px 15px 15px;
+    background-color: var(--weborangelight);
+    color: var(--webwhite);
+    padding: 22px 80px 22px 80px;
+    z-index: 9999;
+    /*oben rechts unten links*/
+}
+
+header .icon {
+    padding-right: 5px;
+}
+
+header img {
+    width: 52px;
+    margin-right: 50px;
+}
+
+#headerSuchleiste {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 10pt;
+    font-style: normal;
+    color: var(--webwhite);
+    background-color: var(--weborange);
+    width: 20%;
+    border: var(--weborange) solid 15px;
+    border-radius: 15px;
+    margin: auto;
+
+    /* einfügen des Suchicons */
+    padding-left: 35px;
+    background-image: url('images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    background-size: 18px;
+}
+
+#headerSuchleiste:focus {
+    outline: 2px solid var(--webwhite);
+
+}
+
+#sprachenicon {
+    width: 20px;
+    padding-left: 40px;
+    background-image: url('images/language.svg');
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    background-size: 22 px;
+
+}
+
+
+/* FOOTER */
+/* hier werden die Stile für den Footer gesetzt, der auf jeder Seite gleich ist */
+
+footer {
+    background-color: var(--webblue);
+    color: var(--webwhite);
+    padding: 20px 120px 20px 120px;
+    /*oben rechts unten links*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* Verteilt Links, Mitte, Rechts */
+    align-items: center;
+    margin-top: auto;
+
+}
+
+footer p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 10pt;
+    font-style: normal;
+    margin-right: 30px;
+}
+
+footer a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 10pt;
+    font-style: normal;
+    text-decoration: none;
+    color: var(--webwhite);
+}
+
+footer img {
+    width: 25px;
+    margin: 8px;
+    float: right;
+    transition: transform 0.2s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+    /* Effekt beim Drüberfahren */
+}
+
+.footer-left {
+    display: flex;
+    flex: 2;
+    justify-content: flex-start;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    /* Zentriert die Links in der Mitte */
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#topSection {
+    background-color: var(--weborange);
+    color: var(--webwhite);
+    padding: 30px 120px 30px 192px;
+
+}
+
+#explanation {
+    background-color: var(--webblue);
+    color: var(--webwhite);
+    text-align: center;
+    padding: 22px 80px 22px 80px;
+
+}
+
+#otherDishes {
+    background-color: var(--webwhite);
+    color: var(--webblack);
+    padding: 22px 80px 22px 80px;
+}
+
+
+
+
+/* SEITENÜBERGÄNGE  */
+.transition-overlay {
+    position: fixed;
+    /* Startet ganz unten, außerhalb des Sichtfelds */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--webwhite);
+    z-index: 950;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Übergangsanimation zu einer anderen Seite */
+.is-animating {
+    animation: transitionFull 1.2s forwards;
+}
+
+@keyframes transitionFull {
+    0% {
+        top: 100%;
+        /* Ganz unten */
+    }
+
+    40% {
+        top: 0;
+        /* Bleibt in der Mitte (deckt alles ab) */
+    }
+
+    60% {
+        top: 0;
+        /* Hält kurz an für das Logo */
+    }
+
+    100% {
+        top: -100%;
+        /* Fährt nach oben raus */
+    }
+}
+
+
+/* Animation beim ersten laden der Seite */
+.is-animating2 {
+    animation: transitionStart 1.2s forwards;
+}
+
+@keyframes transitionStart {
+    0% {
+        top: 0;
+        /* Ganz unten */
+    }
+
+    40% {
+        top: 0;
+        /* Bleibt in der Mitte (deckt alles ab) */
+    }
+
+    60% {
+        top: 0;
+        /* Hält kurz an für das Logo */
+    }
+
+    100% {
+        top: -100%;
+        /* Fährt nach oben raus */
+    }
+}
+
+.overlay-logo {
+    width: 12%;
+    align-self: center;
+}
+
+
+
+
+
+/* Aussehen des Dropdown-Menüs */
+.main-nav {
+    list-style: none;
+    /* Liste ohne Listenpunkte */
+    display: flex;
+    gap: 40px;
+    /* Abstand zwischen den einzelnen Menüpunkten */
+    padding: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 550;
+    font-size: 12pt;
+    font-style: normal;
+}
+
+.main-nav a {
+    color: var(--webwhite);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--webwhite);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.dropdown {
+    position: relative;
+    /* Menü erscheint direkt darunter */
+}
+
+/* Das Menü, das versteckt wird */
+.menü-content {
+    display: none;
+    /* Erstmal unsichtbar */
+    position: absolute;
+    padding: 40px 0px 0px 0px;
+
+    /* Direkt unter den Menüpunkt */
+    left: 0;
+    background-color: var(--weborangelight);
+    min-width: 160px;
+    list-style: none;
+    z-index: 949;
+    /* Damit es über anderem Inhalt liegt */
+}
+
+/* Zeige es beim Hovern */
+.dropdown:hover .menü-content {
+    display: block;
+}
+
+/* Styling für die Links im Menü */
+.menü-content li a {
+    display: block;
+    padding: 8px 20px 10px 20px;
+}
+
+.menü-content li a:hover {
+    background-color: var(--webblue);
+    /* Effekt beim Hovern */
+
+}
+
+.menü-content li {
+    position: relative;
+}
+
+
+/* ZWEITE EBENE DES MENÜS */
+.untermenü {
+    padding: 0px;
+    display: none;
+    position: absolute;
+    /* Schiebt das Menü genau rechts neben den Kontinent */
+    left: 100%;
+    top: 0;
+
+    background-color: var(--weborangelight);
+    min-width: 160px;
+    list-style: none;
+    z-index: 950;
+
+    /* SCROLL-FUNKTION */
+    max-height: 250px;
+    /* Hier stellst du die feste Höhe ein */
+    overflow-y: auto;
+    /* Scrollbalken erscheint automatisch bei vielen Ländern */
+    overflow-x: hidden;
+    /* Verhindert seitliches Wackeln */
+    border-left: var(--webblue) solid 5px;
+    scrollbar-color: var(--weborange) transparent;
+
+}
+
+/* Nur das Untermenü des aktuell gehoverten Listenelements anzeigen */
+.menü-content li:hover>.untermenü {
+    display: block;
+}
+
+/* Styling für die Länder-Links */
+.untermenü li a {
+    padding: 8px 20px 10px 20px;
+    display: block;
+}
