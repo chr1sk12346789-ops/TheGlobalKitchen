@@ -549,11 +549,6 @@ footer img:hover {
     transform: rotate(10deg);
 }
 
-.darkmode #topmarker {
-    filter: brightness(0.1) saturate(0);
-}
-
-
 #toplogo {
     position: absolute;
     width: 300px;
