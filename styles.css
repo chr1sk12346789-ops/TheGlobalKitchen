@@ -1006,9 +1006,23 @@ footer img:hover {
 
     /* ABSCHNITT FÜR WEITERE GERICHTE */
     #otherDishes {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
+
+    .otherDish {
+        width: 200px;
+        height: 280px;
+    }
+
+    .dish_image {
+        width: 200px;
+    }
+
+    .otherDish h3 {
+        font-size: 14pt;
+    }
+    
 }
 
 /* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
