@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Global Kitchen</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="ukraine_css_js/gerichte.css">
     <script src="index.js"></script>
-    <script type="module" src="index.js"></script>
-
+    <script type="module" src="./node_modules/jquery-4.0.0.min.js"></script>
+    <script type="module" src="./ukraine_css_js/gerichte.js"></script>
     <!-- importieren der Schriftarten -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
 </head>
 
 <body>
-    <div id="bodyContainer" data-barba="wrapper">
+    <div id="bodyContainer">
 
         <!-- KOPFLEISTE MIT NAVIGATION -->
         <header>
@@ -29,109 +28,164 @@
 
             <!-- hier wird die Menüleiste gebaut -->
             <nav>
-                <ul class="main-nav">
-                    <li class="dropdown">
-                        <a href="#">Länder</a>
-                        <ul class="menü-content">
-                            <li><a href="/Afrika.html">Afrika</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">Ägypten</a></li>
-                                    <li><a href="#">Äthiopien</a></li>
-                                    <li><a href="#">Algerien</a></li>
-                                    <li><a href="#">Ghana</a></li>
-                                    <li><a href="#">Kenia</a></li>
-                                    <li><a href="#">Marokko</a></li>
-                                    <li><a href="#">Nigeria</a></li>
-                                    <li><a href="#">Senegal</a></li>
-                                    <li><a href="#">Südafrika</a></li>
-                                    <li><a href="#">Tunesien</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/Asien.html">Asien</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">China</a></li>
-                                    <li><a href="#">Indien</a></li>
-                                    <li><a href="#">Indonesien</a></li>
-                                    <li><a href="#">Japan</a></li>
-                                    <li><a href="#">Korea</a></li>
-                                    <li><a href="#">Philippinen</a></li>
-                                    <li><a href="#">Thailand</a></li>
-                                    <li><a href="#">Vietnam</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/Australien.html">Australien</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">Australien</a></li>
-                                    <li><a href="#">Neuseeland</a></li>
-                                    <li><a href="#">Fidschi</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/Europa.html">Europa</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">Albanien</a></li>
-                                    <li><a href="#">Belgien</a></li>
-                                    <li><a href="#">Dänemark</a></li>
-                                    <li><a href="#">Deutschland</a></li>
-                                    <li><a href="#">Frankreich</a></li>
-                                    <li><a href="#">Griechenland</a></li>
-                                    <li><a href="#">Italien</a></li>
-                                    <li><a href="#">Kroatien</a></li>
-                                    <li><a href="#">Niederlande</a></li>
-                                    <li><a href="#">Österreich</a></li>
-                                    <li><a href="#">Polen</a></li>
-                                    <li><a href="#">Portugal</a></li>
-                                    <li><a href="#">Schweden</a></li>
-                                    <li><a href="#">Schweiz</a></li>
-                                    <li><a href="#">Spanien</a></li>
-                                    <li><a href="ukraine.html">Ukraine</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/Nordamerika.html">Nordamerika</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">Kanada</a></li>
-                                    <li><a href="#">Mexiko</a></li>
-                                    <li><a href="#">USA</a></li>
-                                    <li><a href="#">Kuba</a></li>
-                                    <li><a href="#">Jamaika</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/Südamerika.html">Südamerika</a>
-                                <ul class="untermenü">
-                                    <li><a href="#">Argentinien</a></li>
-                                    <li><a href="#">Brasilien</a></li>
-                                    <li><a href="#">Chile</a></li>
-                                    <li><a href="#">Kolumbien</a></li>
-                                    <li><a href="#">Peru</a></li>
-                                    <li><a href="#">Uruguay</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                <input type="checkbox" id="sidebar-active">
+                <label for="sidebar-active" class="open-sidebar-button">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                    <svg class="burger-icon-default" width="40px" height="40px" viewBox="0 0 188 150" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <g transform="matrix(1,0,0,1,-357.918109,-326.768978)">
+                            <g transform="matrix(1,0,0,1.018315,0,-5.984903)">
+                                <path
+                                    d="M357.964,381.139C358.181,383.651 360.32,385.581 362.887,385.581C388.192,385.639 515.124,385.639 540.525,385.639C543.139,385.639 545.312,383.662 545.511,381.103C546.001,367.296 540.071,326.769 451.5,326.769C362.842,326.769 357.297,367.375 357.964,381.139Z"
+                                    style="fill:rgb(55,41,90);" />
+                            </g>
+                            <g transform="matrix(1,0,0,1.018315,0,-5.984903)">
+                                <path
+                                    d="M424.66,415.573L366.106,415.573C363.344,415.573 361.106,413.375 361.106,410.663L361.106,400.456C361.106,397.744 363.344,395.546 366.106,395.546L391.928,395.546C392.611,395.649 393.268,395.892 393.856,396.26L424.66,415.573ZM466.441,395.546L537.305,395.546C540.067,395.546 542.305,397.744 542.305,400.456L542.305,410.663C542.305,413.375 540.067,415.573 537.305,415.573L447.426,415.573L463.403,397.209C464.186,396.309 465.267,395.724 466.441,395.546Z"
+                                    style="fill:rgb(55,41,90);" />
+                            </g>
+                            <path
+                                d="M540.204,435.712C540.205,435.712 540.207,435.712 540.208,435.713C540.304,435.719 540.031,435.179 540.139,435.177C540.14,435.177 540.14,435.177 540.14,435.178C540.152,435.196 540.534,435.743 540.534,435.743C541.892,435.743 543.127,435.76 544.069,436.737C545.012,437.715 545.516,439.033 545.466,440.39C544.93,451.532 541.061,476.769 516.751,476.769C485.554,476.769 417.187,476.492 387.859,476.411C365.298,476.348 359.73,451.999 358.361,440.766C358.202,439.354 358.652,437.942 359.599,436.883C360.546,435.824 361.899,435.218 363.319,435.218L363.848,435.218C364.379,435.218 364.866,434.938 365.135,434.488C365.702,434.465 366.263,434.296 366.761,433.98L373.72,429.573C374.917,428.815 376.379,428.601 377.743,428.982C379.107,429.364 380.245,430.306 380.875,431.575L382.9,435.657C383.714,437.299 385.361,438.363 387.192,438.432L388.379,438.476C389.882,438.533 391.33,437.909 392.323,436.779L399.497,428.611C400.411,427.57 401.716,426.955 403.101,426.913C404.487,426.871 405.827,427.405 406.803,428.389L415.746,437.403C416.678,438.343 417.946,438.875 419.27,438.882L424.123,438.907C425.748,438.915 427.275,438.134 428.219,436.812L432.561,430.729C433.417,429.528 434.76,428.767 436.23,428.649C437.7,428.531 439.147,429.068 440.184,430.117L446.444,436.443C447.383,437.392 448.663,437.926 449.998,437.926L452.478,437.926C453.856,437.926 455.173,437.357 456.118,436.355L461.985,430.127C462.984,429.066 464.396,428.494 465.852,428.561C467.308,428.627 468.662,429.326 469.561,430.473L475.125,437.58C476.06,438.774 477.486,439.479 479.003,439.497L482.92,439.543C484.201,439.558 485.438,439.081 486.378,438.211L496.176,429.131C497.151,428.228 498.445,427.75 499.772,427.802C501.1,427.855 502.352,428.434 503.252,429.411L510.919,437.734C511.882,438.779 513.244,439.365 514.664,439.345L515.303,439.337C517.114,439.312 518.769,438.311 519.632,436.72L522.108,432.151C522.754,430.958 523.858,430.079 525.165,429.716C526.472,429.353 527.871,429.536 529.04,430.225L537.235,435.049C538.13,435.577 539.876,435.75 540.204,435.712Z"
+                                style="fill:rgb(55,41,90);" />
+                        </g>
+                    </svg>
+                    <svg class="burger-icon-hover" width="40px" height="40px" viewBox="0 0 188 170" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                        <g transform="matrix(1,0,0,1,-674.222755,-326.768978)">
+                            <g transform="matrix(1,0,0,1.018315,316.304646,-5.984903)">
+                                <path
+                                    d="M357.964,381.139C358.181,383.651 360.32,385.581 362.887,385.581C388.192,385.639 515.124,385.639 540.525,385.639C543.139,385.639 545.312,383.662 545.511,381.103C546.001,367.296 540.071,326.769 451.5,326.769C362.842,326.769 357.297,367.375 357.964,381.139Z"
+                                    style="fill:rgb(55,41,90);" />
+                            </g>
+                            <g transform="matrix(1,0,0,1.018315,316.304646,4.015097)">
+                                <path
+                                    d="M424.66,415.573L366.106,415.573C363.344,415.573 361.106,413.375 361.106,410.663L361.106,400.456C361.106,397.744 363.344,395.546 366.106,395.546L391.928,395.546C392.611,395.649 393.268,395.892 393.856,396.26L424.66,415.573ZM466.441,395.546L537.305,395.546C540.067,395.546 542.305,397.744 542.305,400.456L542.305,410.663C542.305,413.375 540.067,415.573 537.305,415.573L447.426,415.573L463.403,397.209C464.186,396.309 465.267,395.724 466.441,395.546Z"
+                                    style="fill:rgb(55,41,90);" />
+                            </g>
+                            <g transform="matrix(1,0,0,1,316.304646,20)">
+                                <path
+                                    d="M540.204,435.712C540.205,435.712 540.207,435.712 540.208,435.713C540.304,435.719 540.031,435.179 540.139,435.177C540.14,435.177 540.14,435.177 540.14,435.178C540.152,435.196 540.534,435.743 540.534,435.743C541.892,435.743 543.127,435.76 544.069,436.737C545.012,437.715 545.516,439.033 545.466,440.39C544.93,451.532 541.061,476.769 516.751,476.769C485.554,476.769 417.187,476.492 387.859,476.411C365.298,476.348 359.73,451.999 358.361,440.766C358.202,439.354 358.652,437.942 359.599,436.883C360.546,435.824 361.899,435.218 363.319,435.218L363.848,435.218C364.379,435.218 364.866,434.938 365.135,434.488C365.702,434.465 366.263,434.296 366.761,433.98L373.72,429.573C374.917,428.815 376.379,428.601 377.743,428.982C379.107,429.364 380.245,430.306 380.875,431.575L382.9,435.657C383.714,437.299 385.361,438.363 387.192,438.432L388.379,438.476C389.882,438.533 391.33,437.909 392.323,436.779L399.497,428.611C400.411,427.57 401.716,426.955 403.101,426.913C404.487,426.871 405.827,427.405 406.803,428.389L415.746,437.403C416.678,438.343 417.946,438.875 419.27,438.882L424.123,438.907C425.748,438.915 427.275,438.134 428.219,436.812L432.561,430.729C433.417,429.528 434.76,428.767 436.23,428.649C437.7,428.531 439.147,429.068 440.184,430.117L446.444,436.443C447.383,437.392 448.663,437.926 449.998,437.926L452.478,437.926C453.856,437.926 455.173,437.357 456.118,436.355L461.985,430.127C462.984,429.066 464.396,428.494 465.852,428.561C467.308,428.627 468.662,429.326 469.561,430.473L475.125,437.58C476.06,438.774 477.486,439.479 479.003,439.497L482.92,439.543C484.201,439.558 485.438,439.081 486.378,438.211L496.176,429.131C497.151,428.228 498.445,427.75 499.772,427.802C501.1,427.855 502.352,428.434 503.252,429.411L510.919,437.734C511.882,438.779 513.244,439.365 514.664,439.345L515.303,439.337C517.114,439.312 518.769,438.311 519.632,436.72L522.108,432.151C522.754,430.958 523.858,430.079 525.165,429.716C526.472,429.353 527.871,429.536 529.04,430.225L537.235,435.049C538.13,435.577 539.876,435.75 540.204,435.712Z"
+                                    style="fill:rgb(55,41,90);" />
+                            </g>
+                        </g>
+                    </svg>
+                </label>
+                <div class="links-container">
+                    <label for="sidebar-active" class="close-sidebar-button">
+                        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                            fill="#e3e3e3">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </label>
+                    <ul class="main-nav">
+                        <li class="dropdown">
+                            <a href="#">Länder</a>
+                            <ul class="menu_content">
+                                <li><a href="/Afrika.html">Afrika</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Ägypten</a></li>
+                                        <li><a href="#">Äthiopien</a></li>
+                                        <li><a href="#">Algerien</a></li>
+                                        <li><a href="#">Ghana</a></li>
+                                        <li><a href="#">Kenia</a></li>
+                                        <li><a href="#">Marokko</a></li>
+                                        <li><a href="#">Nigeria</a></li>
+                                        <li><a href="#">Senegal</a></li>
+                                        <li><a href="#">Südafrika</a></li>
+                                        <li><a href="#">Tunesien</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Asien.html">Asien</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">China</a></li>
+                                        <li><a href="#">Indien</a></li>
+                                        <li><a href="#">Indonesien</a></li>
+                                        <li><a href="#">Japan</a></li>
+                                        <li><a href="#">Korea</a></li>
+                                        <li><a href="#">Philippinen</a></li>
+                                        <li><a href="#">Thailand</a></li>
+                                        <li><a href="#">Vietnam</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Australien.html">Australien</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Australien</a></li>
+                                        <li><a href="#">Neuseeland</a></li>
+                                        <li><a href="#">Fidschi</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Europa.html">Europa</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Albanien</a></li>
+                                        <li><a href="#">Belgien</a></li>
+                                        <li><a href="#">Dänemark</a></li>
+                                        <li><a href="#">Deutschland</a></li>
+                                        <li><a href="#">Frankreich</a></li>
+                                        <li><a href="#">Griechenland</a></li>
+                                        <li><a href="#">Italien</a></li>
+                                        <li><a href="#">Kroatien</a></li>
+                                        <li><a href="#">Niederlande</a></li>
+                                        <li><a href="#">Österreich</a></li>
+                                        <li><a href="#">Polen</a></li>
+                                        <li><a href="#">Portugal</a></li>
+                                        <li><a href="#">Schweden</a></li>
+                                        <li><a href="#">Schweiz</a></li>
+                                        <li><a href="#">Spanien</a></li>
+                                        <li><a href="ukraine.html">Ukraine</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Nordamerika.html">Nordamerika</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Kanada</a></li>
+                                        <li><a href="#">Mexiko</a></li>
+                                        <li><a href="#">USA</a></li>
+                                        <li><a href="#">Kuba</a></li>
+                                        <li><a href="#">Jamaika</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Südamerika.html">Südamerika</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Argentinien</a></li>
+                                        <li><a href="#">Brasilien</a></li>
+                                        <li><a href="#">Chile</a></li>
+                                        <li><a href="#">Kolumbien</a></li>
+                                        <li><a href="#">Peru</a></li>
+                                        <li><a href="#">Uruguay</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li class="dropdown">
-                        <a href="#">Rezepte</a>
-                        <ul class="menü-content">
-                            <li><a href="/Vorspeisen.html">Vorspeisen</a></li>
-                            <li><a href="/Hauptgänge.html">Hauptgänge</a></li>
-                            <li><a href="/Desserts.html">Desserts</a></li>
-                        </ul>
-                    </li>
+                        <li class="dropdown">
+                            <a href="#">Rezepte</a>
+                            <ul class="menu_content">
+                                <li><a href="/Vorspeisen.html">Vorspeisen</a></li>
+                                <li><a href="/Hauptgänge.html">Hauptgänge</a></li>
+                                <li><a href="/Desserts.html">Desserts</a></li>
+                            </ul>
+                        </li>
 
-                    <li><a href="/about.html">Kontakt</a></li>
-                </ul>
+                        <li><a href="/about.html">Kontakt</a></li>
+                    </ul>
             </nav>
 
 
-            <!-- hier wird die Suchleiste erzeugt -->
-            <input id="headerSuchleiste" type="text" placeholder="Suche...">
+            <!-- here the search bar is created -->
+            <input id="header_search_bar" type="text" placeholder="Search...">
 
             <!-- hier wird die Sprachenauswahl hinzugefügt -->
             <nav>
                 <ul class="main-nav">
                     <li class="dropdown">
 
-                        <a href="#"><span id="sprachenicon">Deutsch</span></a>
-                        <ul class="menü-content">
+                        <a href="#"><span id="language_icon">Deutsch</span></a>
+                        <ul class="menu_content">
                             <li><a href="/English.html"><span class="icon">🇬🇧</span> English</a></li>
                             <li><a href="/Español.html"><span class="icon">🇪🇸</span> Español</a></li>
                             <li><a href="/Français.html"><span class="icon">🇫🇷</span> Français </a></li>
@@ -158,52 +212,330 @@
                 </svg>
             </button>
 
-        </header>
-
-
-
-
-        <main data-barba="container">
-            <!-- HIER KANNST DU DEINEN INDIVIDUELLEN INHALT EINFÜGEN -->
-            <!-- ---------------------------------------------------------------- -->
-
-
-
-
-
-
-
-
-
-
-            <!-- ---------------------------------------------------------------- -->
-        </main>
-
-
-
-        <!-- FUßLEISTE -->
-        <footer>
-            <div class="footer-left">
-                <p>© 2026 The Global Kitchen</p>
-            </div>
-
-            <div class="footer-center">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <p>Social Media:</p>
-            </div>
-
-            <div class="footer-right">
-                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="images/youtube.svg" alt="Youtube"></a>
-            </div>
-        </footer>
     </div>
+    </header>
 
-    <!-- ÜBERGANG ZWISCHEN DEN SEITEN -->
-    <div class="transition-overlay">
-        <img src="images/Logo_orange.svg" alt="Logo" class="overlay-logo">
+
+
+
+    <main data-barba="container">
+        <!-- HIER KANNST DU DEINEN INDIVIDUELLEN INHALT EINFÜGEN -->
+        <!-- ---------------------------------------------------------------- -->
+        <!-- LAND UND MARKER -->
+
+        <section class="top">
+            <h1 class="headline">Ukraine</h1>
+            <img class="marker" src="images/marker.svg" alt="Marker">
+        </section>
+
+        <!-- BROTKRUMNAVIGATION -->
+        <section>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Startseite</a>
+                </li>
+                <li>
+                    <a href="ukraine.html">Ukraine</a>
+                </li>
+            </ul>
+        </section>
+
+
+
+        <!-- LAYOUT -->
+        <section class="page-layout">
+            <!-- LAYOUT LEFT-->
+            <div class="left-side">
+                <h2>Nationalgerichte</h2>
+                <br>
+
+                <!-- vorspeisen -->
+
+                <section class="category">
+                    <p><b>Vorspeisen</b></p>
+
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/krabsalat.png" alt="Krabbenstäbchen-Salat">
+                            <div class="info">
+                                <h3>Krabbenstäbchen-Salat</h3>
+                                <br>
+                                <p>Ein moderner Klassiker der ukrainischen Küche aus Krabbenstäbchen, süßem Mais,
+                                    frischen Gurken und Eiern. Er wird mit Mayonnaise angerichtet und für das typische
+                                    Aroma mit frischem Dill verfeinert.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">30 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/salat2.png" alt="Transkarpatiens Snack">
+                            <div class="info">
+                                <h3>Transkarpatiens Snack</h3>
+                                <br>
+                                <p>Knackiges Sauerkraut mit gesalzenen Waldpilzen, verfeinert mit aromatischem Öl und
+                                    Zwiebeln. Eine einfache, authentische Vorspeise, die den besonderen Charakter der
+                                    Karpaten-Küche widerspiegelt.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">15 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/schuba.png" alt="Schuba">
+                            <div class="info">
+                                <h3>Schuba (Hering im Pelzmantel)</h3>
+                                <br>
+                                <p>Ein geschichteter Festtagssalat aus gesalzenem Hering, gekochtem Gemüse wie Rote
+                                    Bete, Kartoffeln und Karotten sowie Eiern. Die charakteristische violette Farbe
+                                    entsteht durch die oberste Schicht Rote Bete, die mit einer feinen Mayonnaise-Haube
+                                    überzogen wird.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">90 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button class="toggle-category">Kategorie öffnen</button>
+                    <br>
+                </section>
+
+
+                <!-- hauptgänge -->
+
+                <section class="category">
+                    <p><b>Hauptgänge</b></p>
+
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/wareniki.png" alt="Wareniki">
+                            <div class="info">
+                                <h3>Wareniki</h3>
+                                <br>
+                                <p>Handgeformte Teigtaschen mit einer Füllung aus Kartoffelpüree und Röstzwiebeln. Ein
+                                    echtes Trostessen, das perfekt mit geschmolzener Butter oder saurer Sahne
+                                    harmoniert.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">65 min</p>
+                                </div>
+                                <button class="recipe-btn" data-url="rezept.html">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/borsch.png" alt="Borschtsch">
+                            <div class="info">
+                                <h3>Borschtsch</h3>
+                                <br>
+                                <p>Eine herzhafte Rote-Bete-Suppe mit Rindfleisch, Weißkohl, Kartoffeln und Karotten.
+                                    Sie wird traditionell mit einem Klecks Schmand und frischem Knoblauch-Pampuschki
+                                    serviert.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">120 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/golubtsi.png" alt="Holubtsi">
+                            <div class="info">
+                                <h3>Holubtsi</h3>
+                                <br>
+                                <p>Zarte Kohlblätter, gefüllt mit einer Mischung aus Hackfleisch und Reis, geschmort in
+                                    einer aromatischen Tomaten-Schmand-Sauce. Ein herzhaftes Hauptgericht, das auf der
+                                    Zunge zergeht.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">90 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button class="toggle-category">Kategorie öffnen</button>
+                    <br>
+
+                </section>
+
+                <!-- desserts -->
+                <section class="category">
+                    <p><b>Desserts</b></p>
+
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/Lwiwer Quarkkuchen.png" alt="Lwiwer Quarkkuchen">
+                            <div class="info">
+                                <h3>Lwiwer Quarkkuchen</h3>
+                                <br>
+                                <p>Ein eleganter, saftiger Käsekuchen aus feinem Quark mit Rosinen, überzogen mit einer
+                                    glänzenden Schokoladenglasur. Er ist das kulinarische Wahrzeichen von Lwiw und
+                                    besticht durch seine dichte, cremige Textur.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">90 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/Werhuny.png" alt="Werhuny">
+                            <div class="info">
+                                <h3>Werhuny</h3>
+                                <br>
+                                <p>Traditionelles, in Öl ausgebackenes Hefegebäck, das oft mit Puderzucker bestreut
+                                    wird. Diese knusprigen Teigstreifen sind ein beliebter Snack zu Tee oder Honig und
+                                    erinnern an eine süße Kindheit.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">30 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/Backäpfel mit Honig.png" alt="Backäpfel mit Honig">
+                            <div class="info">
+                                <h3>Backäpfel mit Honig</h3>
+                                <br>
+                                <p>Ein gesundes und aromatisches Dessert aus dem Ofen, gefüllt mit Honig, Walnüssen und
+                                    Zimt. Die Kombination aus weichen Äpfeln und der süßen Füllung ist ein zeitloser
+                                    Klassiker der ukrainischen Hausküche.</p>
+                                <br>
+                                <div id="time">
+                                    <img class="clock" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="smalltext">40 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button class="toggle-category">Kategorie öffnen</button>
+
+                </section>
+
+            </div>
+            <!-- LAYOUT right-->
+            <div class="right-side">
+                <h2>kulinarische Vielfalt</h2> <br>
+
+                <section class="new">
+                    <h3>Regionale Geschmacksvielfalt</h3> <br>
+                    <p>Die kulinarische Landkarte der Ukraine besticht durch eine beeindruckende Vielfalt, die an der
+                        Schnittstelle verschiedener Kulturen und Landschaften entstanden ist. Während im Westen, in den
+                        Karpaten, herzhafte Gerichte aus Pilzen und Milchprodukten wie würziger Schafskäse (Brynza) oder
+                        reichhaltige Pilzsuppen dominieren, glänzt der Süden am Schwarzen Meer mit fangfrischem Fisch
+                        und sonnengereiftem Gemüse. Jede Region nutzt ihre eigenen Schätze: von Wildspezialitäten aus
+                        den nördlichen Wäldern bis hin zu den saftigen Tomaten und Auberginen aus den sonnigen Steppen
+                        von Cherson.</p>
+                </section>
+                <br>
+                <section class="new">
+                    <h3>Die Kunst der ukrainischen Gastfreundschaft</h3> <br>
+                    <p>Ein Markenzeichen der ukrainischen Küche ist die Meisterschaft in der Zubereitung von Fleisch-
+                        und Gemüsegerichten, die oft durch traditionelles Schmoren und Backen veredelt werden. Berühmte
+                        Kohlrouladen (Holubtsi), gefülltes Gemüse und eine breite Palette an Fleischdelikatessen – von
+                        hausgemachter Wurst bis hin zu geräuchertem Speck mit Knoblauch – spiegeln die Großzügigkeit des
+                        Landes wider. Eine besondere Rolle spielen Saucen auf Basis von hausgemachtem Schmand und
+                        frischen Kräutern, die den natürlichen Geschmack lokaler Produkte unterstreichen und jeder
+                        Mahlzeit eine heimelige Note verleihen.</p>
+                </section>
+                <br>
+                <section class="new">
+                    <h3>Moderne Interpretation und Tradition</h3> <br>
+                    <p>Heute erlebt die ukrainische Gastronomie eine Renaissance und wandelt sich zu einer modernen
+                        Kunstform. In Städten wie Kyjiw oder Lwiw interpretieren Köche traditionelle Rezepte neu und
+                        setzen dabei konsequent auf saisonale, lokale Zutaten wie Spargel, Ziegenkäse oder
+                        Flussforellen. Abgerundet wird das kulinarische Erlebnis durch traditionelle Getränke:
+                        aromatischer Usvar aus geräucherten Trockenfrüchten oder Beeren-Liköre (Nalyvka) ergänzen die
+                        kräftigen Aromen perfekt und betonen die tiefe Verbindung zwischen der Kulinarik, der Natur und
+                        der Geschichte des Landes.</p>
+                </section>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- ---------------------------------------------------------------- -->
+    </main>
+
+
+
+    <!-- FUßLEISTE -->
+    <footer>
+        <div class="footer-left">
+            <p>© 2026 The Global Kitchen</p>
+        </div>
+
+        <div class="footer-center">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <p>Social Media:</p>
+        </div>
+
+        <div class="footer-right">
+            <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/youtube.svg" alt="Youtube"></a>
+        </div>
+    </footer>
     </div>
 
 </body>
