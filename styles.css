@@ -9,14 +9,6 @@
     --webblack: #1C1E1F;
 }
 
-/* :root {
-    --weborange: #3e41f6;
-    --weborangelight: #6179ff;
-    --webblue: #37295A;
-    --webwhite: #FCFDF5;
-    --webgray: #E4E4E4;
-    --webblack: #1C1E1F;
-} */
 
 /* Lightmode und Darkmode */
 .darkmode {
@@ -51,7 +43,7 @@
     top: 20px;
     right: 20px;
     border: none;
-    z-index: 951;
+    z-index: 9999;
 }
 
 #theme-switch:hover {
@@ -74,6 +66,129 @@
 
 .darkmode #theme-switch svg:last-child {
     display: block;
+}
+
+/* Aussehen des Dropdown-Menüs */
+.main-nav {
+    list-style: none;
+    /* Liste ohne Listenpunkte */
+    display: flex;
+    gap: 40px;
+    /* Abstand zwischen den einzelnen Menüpunkten */
+    padding: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 550;
+    font-size: 12pt;
+    font-style: normal;
+}
+
+.main-nav a {
+    color: var(--webwhite);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--webwhite);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.dropdown {
+    position: relative;
+    /* Menü erscheint direkt darunter */
+}
+
+/* Das Menü, das versteckt wird */
+.menu_content {
+    display: none;
+    /* Erstmal unsichtbar */
+    position: absolute;
+    padding: 40px 0px 0px 0px;
+
+    /* Direkt unter den Menüpunkt */
+    left: 0;
+    background-color: var(--weborangelight);
+    min-width: 160px;
+    list-style: none;
+    z-index: 2100;
+    /* Damit es über anderem Inhalt liegt */
+}
+
+/* Zeige es beim Hovern (disabled) */
+/* Show submenu on hover for desktop */
+.dropdown:hover .menu_content {
+    display: block;
+}
+
+/* Show menus when parent has 'open' (click-controlled) */
+li.open>.menu_content,
+li.open>.submenu,
+.dropdown.open>.menu_content {
+    display: block !important;
+}
+
+/* Styling für die Links im Menü */
+.menu_content li a {
+    display: block;
+    padding: 8px 20px 10px 20px;
+}
+
+.menu_content li a:hover {
+    background-color: var(--webblue);
+    /* Effekt beim Hovern */
+
+}
+
+.menu_content li {
+    position: relative;
+}
+
+
+/* ZWEITE EBENE DES MENÜS */
+.submenu {
+    padding: 0px;
+    display: none;
+    position: absolute;
+    /* Schiebt das Menü genau rechts neben den Kontinent */
+    left: 100%;
+    top: 0;
+
+    background-color: var(--weborangelight);
+    min-width: 160px;
+    list-style: none;
+    z-index: 2100;
+
+    /* SCROLL-FUNKTION */
+    max-height: 250px;
+    /* Hier stellst du die feste Höhe ein */
+    overflow-y: auto;
+    /* Scrollbalken erscheint automatisch bei vielen Ländern */
+    overflow-x: hidden;
+    /* Verhindert seitliches Wackeln */
+    border-left: var(--webblue) solid 5px;
+    scrollbar-color: var(--webblue) transparent;
+
+}
+
+/* Nur das Untermenü des aktuell gehoverten Listenelements anzeigen */
+.menu_content li:hover>.submenu,
+.menu_content li:focus-within>.submenu,
+.submenu:hover {
+    display: block;
+}
+
+/* Styling für die Länder-Links */
+.submenu li a {
+    padding: 8px 20px 10px 20px;
+    display: block;
+}
+
+
+#sidebar-active,
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
 }
 
 /* SCHRIFTARTEN */
@@ -131,19 +246,13 @@ body {
     background-color: var(--weborange);
 }
 
-#bodyContainer {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* vh = Viewport Height (100% der Bildschirmhöhe) */
-}
-
 
 /* HEADER */
 /* hier werden die Stile für den Header gesetzt, der auf jeder Seite gleich ist */
-
 header {
-    position: sticky;
+    width: 100vw;
+    box-sizing: border-box;
+    position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -164,7 +273,7 @@ header img {
     margin-right: 50px;
 }
 
-#headerSuchleiste {
+#header_search_bar {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 10pt;
@@ -184,20 +293,26 @@ header img {
     background-size: 18px;
 }
 
-#headerSuchleiste:focus {
+#header_search_bar:focus {
     outline: 2px solid var(--webwhite);
 
 }
 
-#sprachenicon {
+#language_icon {
     width: 20px;
     padding-left: 40px;
     background-image: url('images/language.svg');
     background-repeat: no-repeat;
     background-position: 2px center;
-    background-size: 22 px;
+    background-size: 22px;
 
 }
+
+
+
+
+
+
 
 
 /* FOOTER */
@@ -213,7 +328,8 @@ footer {
     justify-content: space-between;
     /* Verteilt Links, Mitte, Rechts */
     align-items: center;
-    margin-top: auto;
+    margin-top: 0px;
+    z-index: 500;
 
 }
 
@@ -262,6 +378,7 @@ footer img:hover {
 .footer-right {
     display: flex;
     justify-content: flex-end;
+    padding-left: 100px;
 }
 
 #topSection {
@@ -297,7 +414,7 @@ footer img:hover {
     width: 100%;
     height: 100%;
     background-color: var(--webwhite);
-    z-index: 950;
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -367,108 +484,196 @@ footer img:hover {
 
 
 
-/* Aussehen des Dropdown-Menüs */
-.main-nav {
-    list-style: none;
-    /* Liste ohne Listenpunkte */
-    display: flex;
-    gap: 40px;
-    /* Abstand zwischen den einzelnen Menüpunkten */
-    padding: 15px;
 
-    font-family: "Montserrat", sans-serif;
-    font-weight: 550;
-    font-size: 12pt;
-    font-style: normal;
+
+@media (max-width: 1000px) {
+
+    #theme-switch {
+        top: 13px;
+    }
+   
+
+    /* --- HEADER & BURGER (Original-Stil beibehalten) --- */
+    header {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    #header-logo {
+        margin: 0;
+        width: 45px;
+    }
+
+    #header_search_bar,
+    header nav:last-of-type,
+    #language_icon {
+        display: none;
+    }
+
+    /* SIDEBAR CONTAINER */
+    .links-container {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--webblack);
+        /* Nutzt deine Variable */
+        z-index: 2000;
+        transition: left 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
+        overflow-y: auto;
+        /* Erlaubt Scrollen, wenn Menüs weit aufklappen */
+    }
+
+    /* (reverted sidebar-open behavior) */
+
+    #sidebar-active:checked~.links-container {
+        left: 0;
+    }
+
+    /* --- AKKORDION LOGIK --- */
+    .main-nav {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
+
+    /* HOVER KOMPLETT AUSSCHALTEN (disabled here to avoid hiding open menus) */
+    /* .dropdown:hover .menu_content,
+    .menu_content li:hover>.submenu {
+        display: none !important;
+    } */
+
+    /* UNTERMENÜS STYLING */
+    .menu_content,
+    .submenu {
+        display: none;
+        position: static;
+        /* Drückt den Rest nach unten */
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.05);
+        /* Dezente Abhebung */
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Anzeigen nur über die Klasse 'open' */
+    li.open>.menu_content,
+    li.open>.submenu {
+        display: block !important;
+    }
+
+    .main-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 15px 25px;
+        color: var(--webwhite);
+        text-decoration: none;
+    }
+
+    /* PFEIL-INDIKATOREN */
+    .has-submenu>a::after {
+        content: ' ▼';
+        float: right;
+        font-size: 0.8em;
+        transition: transform 0.3s;
+    }
+
+    li.open>a::after {
+        transform: rotate(180deg);
+    }
+
+    .menu_content li a:hover {
+        background-color: var(--weborange);
+        /* Effekt beim Hovern */
+
+    }
+
+    /* BURGER ICONS*/
+    .open-sidebar-button {
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        display: block;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .darkmode .open-sidebar-button {
+        filter: brightness(2.5) saturate(0);
+    }
+
+    .open-sidebar-button .burger-icon-hover {
+        display: none;
+    }
+
+    .open-sidebar-button:hover .burger-icon-default {
+        display: none;
+    }
+
+    .open-sidebar-button:hover .burger-icon-hover {
+        display: block;
+    }
+
+    .close-sidebar-button {
+        position: absolute;
+        top: 18px;
+        left: 20px;
+        display: block;
+        cursor: pointer;
+    }
 }
 
-.main-nav a {
-    color: var(--webwhite);
-    text-decoration: none;
-}
+@media (max-width: 1000px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Richtet die Flex-Bereiche links aus */
+        padding: 40px 20px;
+        gap: 30px;
+    }
 
-.main-nav a:hover {
-    color: var(--webwhite);
-    text-decoration: none;
-    font-weight: 700;
-}
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Inhalt innerhalb der Bereiche nach links */
+        justify-content: flex-start;
+        gap: 15px;
+        padding-left: 40px;
+    }
 
-.dropdown {
-    position: relative;
-    /* Menü erscheint direkt darunter */
-}
+    .footer-left {
+        padding-left: 25px;
+    }
 
-/* Das Menü, das versteckt wird */
-.menü-content {
-    display: none;
-    /* Erstmal unsichtbar */
-    position: absolute;
-    padding: 40px 0px 0px 0px;
+    .footer-center a,
+    .footer-center p {
+        text-align: left;
+        margin: 0;
+    }
 
-    /* Direkt unter den Menüpunkt */
-    left: 0;
-    background-color: var(--weborangelight);
-    min-width: 160px;
-    list-style: none;
-    z-index: 949;
-    /* Damit es über anderem Inhalt liegt */
-}
+    .footer-right {
+        flex-direction: row;
+        /* Social Icons bleiben nebeneinander */
+        gap: 15px;
+    }
 
-/* Zeige es beim Hovern */
-.dropdown:hover .menü-content {
-    display: block;
-}
-
-/* Styling für die Links im Menü */
-.menü-content li a {
-    display: block;
-    padding: 8px 20px 10px 20px;
-}
-
-.menü-content li a:hover {
-    background-color: var(--webblue);
-    /* Effekt beim Hovern */
-
-}
-
-.menü-content li {
-    position: relative;
-}
-
-
-/* ZWEITE EBENE DES MENÜS */
-.untermenü {
-    padding: 0px;
-    display: none;
-    position: absolute;
-    /* Schiebt das Menü genau rechts neben den Kontinent */
-    left: 100%;
-    top: 0;
-
-    background-color: var(--weborangelight);
-    min-width: 160px;
-    list-style: none;
-    z-index: 950;
-
-    /* SCROLL-FUNKTION */
-    max-height: 250px;
-    /* Hier stellst du die feste Höhe ein */
-    overflow-y: auto;
-    /* Scrollbalken erscheint automatisch bei vielen Ländern */
-    overflow-x: hidden;
-    /* Verhindert seitliches Wackeln */
-    border-left: var(--webblue) solid 5px;
-    scrollbar-color: var(--weborange) transparent;
-
-}
-
-/* Nur das Untermenü des aktuell gehoverten Listenelements anzeigen */
-.menü-content li:hover>.untermenü {
-    display: block;
-}
-
-/* Styling für die Länder-Links */
-.untermenü li a {
-    padding: 8px 20px 10px 20px;
-    display: block;
+    footer img {
+        float: none;
+        /* Entfernt den Float, damit Flexbox sauber greift */
+        margin: 0;
+    }
 }
