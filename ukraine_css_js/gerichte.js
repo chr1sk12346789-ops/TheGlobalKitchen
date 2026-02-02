@@ -1,16 +1,16 @@
-$(document).ready(function () { /* $ - das Kürzel für die jQuery-Bibliothek*/
-// funktioniert wenn html fertig geladen ist
+$(document).ready(function () { 
+
     // gerichte wo mehr anzeigen
     $(".category").each(function () {
         $(this).find(".dish").not(":first").addClass("hidden");
     });
-//Der Klick-Event-Handler
+
     $(".toggle-category").on("click", function () {
         const category = $(this).closest(".category");/*Geht im HTML-Baum nach oben, 
                      bis er das nächste Eltern-Element mit der Klasse .category findet*/
         const hiddenDishes = category.find(".dish.hidden");
 
-        if (hiddenDishes.length > 0) { /* wenn es versteckte Gerichte gibt*/
+        if (hiddenDishes.length > 0) { 
             hiddenDishes.removeClass("hidden");
             $(this).text("Kategorie schließen");
         } else {
