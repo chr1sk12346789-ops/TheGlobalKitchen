@@ -14,9 +14,7 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.3",
-    "@netlify/vite-plugin": "^2.8.0"
-  },
-  "devDependencies": {
-    "vite": "^7.3.1"
+    "@netlify/vite-plugin": "^2.8.0",
+    "jquery": "^4.0.0"
   }
 }

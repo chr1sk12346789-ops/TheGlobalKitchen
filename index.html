@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Global Kitchen</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="startseite_css_js/startseite.css">
-    <script type="module" src="mapdata.js"></script>
-    <script type="module" src="index.js"></script>
-    <script type="module" src="./startseite_css_js/startseite.js"></script>
+    <!-- <link rel="stylesheet" href="startseite_css_js/startseite.css"> -->
+    <script src="mapdata.js"></script>
+    <script src="index.js"></script>
+    <script src="startseite_css_js/startseite.js"></script>
 
-    <!-- importieren der Schriftarten -->
+    <!-- Schriftarten importieren -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
@@ -20,15 +20,14 @@
 </head>
 
 <body>
-    <div id="bodyContainer" data-barba="wrapper">
+    <div id="bodyContainer">
 
-        <!-- KOPFLEISTE MIT NAVIGATION -->
+        <!-- HEADER & NAV -->
         <header>
             <a href="index.html">
                 <img id="header-logo" src="images/Logo_blue.svg" alt="The Global Kitchen Logo">
             </a>
 
-            <!-- hier wird die Menüleiste gebaut -->
             <nav>
                 <input type="checkbox" id="sidebar-active">
                 <label for="sidebar-active" class="open-sidebar-button">
@@ -178,10 +177,11 @@
             </nav>
 
 
-            <!-- here the search bar is created -->
+            <!-- suchleiste -->
             <input id="header_search_bar" type="text" placeholder="Search...">
 
-            <!-- hier wird die Sprachenauswahl hinzugefügt -->
+
+            <!-- sprachenauswahl -->
             <nav>
                 <ul class="main-nav">
                     <li class="dropdown">
@@ -200,7 +200,8 @@
                 </ul>
             </nav>
 
-            <!-- Button für darkmode -->
+
+            <!-- themeswitch-button -->
             <button id="theme-switch">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                     fill="#e3e3e3">
@@ -223,22 +224,22 @@
     <main data-barba="container">
         <!-- ---------------------------------------------------------------- -->
 
-        <!-- ÜBERSCHRIFT & LOGO -->
+        <!-- TOP-SECTION --- ÜBERSCHRIFT & LOGO -->
         <section id="topSection">
-            <h1 class="headline">Explore <br>new <br>Tastes </h1>
-            <img id="marker" src="images/marker.svg" alt="Marker">
+            <h1 class="startheadline">Explore <br>new <br>Tastes </h1>
+            <img id="topmarker" src="images/marker.svg" alt="Marker">
             <img id="toplogo" src="images/Logo_orange.svg" alt="The Global Kitchen Logo">
 
         </section>
 
 
-        <!-- ERKLÄRUNG DER KARTENFUNKTION -->
+        <!-- ERKLÄRUNGS-ABSCHNITT-->
         <section id="explanation">
             <p>Wähle ein interessantes Land auf der Karte aus und finde das passende Gericht.</p>
         </section>
 
 
-        <!-- KARTE mit SUCHFUNKTION  -->
+        <!-- KARTEN-ABSCHNITT  -->
         <section id="mapSection">
             <div id="country_panel">
                 <p id="country_name">Land</p>
@@ -252,7 +253,7 @@
                 <button id="zoom-out" type="button">-</button>
             </div>
             <div id="side-panel"></div>
-            <!-- hier wird die Suchleiste erzeugt -->
+
             <div id="country_search_bar">
                 <input id="country_search" type="text" placeholder="Land suchen...">
             </div>
@@ -1801,7 +1802,7 @@
         </section>
 
 
-        <!-- WEITERE GERICHTE/KLASSIKER AUS ALLER WELT -->
+        <!-- ANDERE GERICHTE ABSCHNITT -->
         <section id="otherDishes">
             <h2>Klassiker aus aller Welt</h2>
             <div id="carouselContainer">
@@ -1901,9 +1902,7 @@
     </main>
 
 
-
-
-    <!-- FUßLEISTE -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-left">
             <p>© 2026 The Global Kitchen</p>
@@ -1921,15 +1920,6 @@
         </div>
     </footer>
     </div>
-
-    <!-- ÜBERGANG ZWISCHEN DEN SEITEN -->
-    <div class="transition-overlay">
-        <img src="images/Logo_orange.svg" alt="Logo" class="overlay-logo">
-    </div>
-
-
-
-
 
 </body>
 
