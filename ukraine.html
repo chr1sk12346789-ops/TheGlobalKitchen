@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="ukraine_css_js/gerichte.css">
     <script src="index.js"></script>
     <script type="module" src="index.js"></script>
-    <script src="node_modules/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-    <script src="ukraine_css_js/gerichte.js"></script>
+    <script src="./node_modules/jquery-4.0.0.min.js"></script>
+    <script src="./ukraine_css_js/gerichte.js"></script>
     <!-- importieren der Schriftarten -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 <body>
     <div id="bodyContainer" data-barba="wrapper">
 
-         <!-- KOPFLEISTE MIT NAVIGATION -->
+        <!-- KOPFLEISTE MIT NAVIGATION -->
         <header>
             <a href="index.html">
                 <img id="header-logo" src="images/Logo_blue.svg" alt="The Global Kitchen Logo">
@@ -220,269 +220,324 @@
 
 
 
-        <main data-barba="container">
-            <!-- HIER KANNST DU DEINEN INDIVIDUELLEN INHALT EINFÜGEN -->
-            <!-- ---------------------------------------------------------------- -->
-            <!-- LAND UND MARKER -->
+    <main data-barba="container">
+        <!-- HIER KANNST DU DEINEN INDIVIDUELLEN INHALT EINFÜGEN -->
+        <!-- ---------------------------------------------------------------- -->
+        <!-- LAND UND MARKER -->
 
-            <section class="top">
-                <h1 class="headline">Ukraine</h1>
-                <img class="marker" src="images/marker.svg" alt="Marker">
-            </section>
+        <section class="top">
+            <h1 class="headline">Ukraine</h1>
+            <img class="marker" src="images/marker.svg" alt="Marker">
+        </section>
 
-            <!-- BROTKRUMNAVIGATION -->
-            <section>
-                <ul class="breadcrumb">
-                    <li>
-                        <a href="index.html">Startseite</a>
-                    </li>
-                    <li>
-                        <a href="ukraine.html">Ukraine</a>
-                    </li>  
-                </ul>
-            </section>
-             
+        <!-- BROTKRUMNAVIGATION -->
+        <section>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Startseite</a>
+                </li>
+                <li>
+                    <a href="ukraine.html">Ukraine</a>
+                </li>
+            </ul>
+        </section>
 
 
-            <!-- LAYOUT -->
-            <section class="page-layout">
-                <!-- LAYOUT LEFT-->
-                 <div class="left-side">
-                     <h2>Nationalgerichte</h2>
+
+        <!-- LAYOUT -->
+        <section class="page-layout">
+            <!-- LAYOUT LEFT-->
+            <div class="left-side">
+                <h2>Nationalgerichte</h2>
+                <br>
+
+                <!-- vorspeisen -->
+
+                <section class="category">
+                    <p><b>Vorspeisen</b></p>
+
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/krabsalat.png" alt="Krabbenstäbchen-Salat">
+                            <div class="info">
+                                <h3>Krabbenstäbchen-Salat</h3>
+                                <br>
+                                <p>Ein moderner Klassiker der ukrainischen Küche aus Krabbenstäbchen, süßem Mais,
+                                    frischen Gurken und Eiern. Er wird mit Mayonnaise angerichtet und für das typische
+                                    Aroma mit frischem Dill verfeinert.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">30 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/salat2.png" alt="Transkarpatiens Snack">
+                            <div class="info">
+                                <h3>Transkarpatiens Snack</h3>
+                                <br>
+                                <p>Knackiges Sauerkraut mit gesalzenen Waldpilzen, verfeinert mit aromatischem Öl und
+                                    Zwiebeln. Eine einfache, authentische Vorspeise, die den besonderen Charakter der
+                                    Karpaten-Küche widerspiegelt.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">15 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/schuba.png" alt="Schuba">
+                            <div class="info">
+                                <h3>Schuba (Hering im Pelzmantel)</h3>
+                                <br>
+                                <p>Ein geschichteter Festtagssalat aus gesalzenem Hering, gekochtem Gemüse wie Rote
+                                    Bete, Kartoffeln und Karotten sowie Eiern. Die charakteristische violette Farbe
+                                    entsteht durch die oberste Schicht Rote Bete, die mit einer feinen Mayonnaise-Haube
+                                    überzogen wird.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">90 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button class="toggle-category">Kategorie öffnen</button>
+                    <br>
+                </section>
+
+
+                <!-- hauptgänge -->
+
+                <section class="category">
+                    <p><b>Hauptgänge</b></p>
+
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/wareniki.png" alt="Wareniki">
+                            <div class="info">
+                                <h3>Wareniki</h3>
+                                <br>
+                                <p>Handgeformte Teigtaschen mit einer Füllung aus Kartoffelpüree und Röstzwiebeln. Ein
+                                    echtes Trostessen, das perfekt mit geschmolzener Butter oder saurer Sahne
+                                    harmoniert.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">65 min</p>
+                                </div>
+                                <button class="recipe-btn" data-url="rezept.html">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/borsch.png" alt="Borschtsch">
+                            <div class="info">
+                                <h3>Borschtsch</h3>
+                                <br>
+                                <p>Eine herzhafte Rote-Bete-Suppe mit Rindfleisch, Weißkohl, Kartoffeln und Karotten.
+                                    Sie wird traditionell mit einem Klecks Schmand und frischem Knoblauch-Pampuschki
+                                    serviert.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">120 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/golubtsi.png" alt="Holubtsi">
+                            <div class="info">
+                                <h3>Holubtsi</h3>
+                                <br>
+                                <p>Zarte Kohlblätter, gefüllt mit einer Mischung aus Hackfleisch und Reis, geschmort in
+                                    einer aromatischen Tomaten-Schmand-Sauce. Ein herzhaftes Hauptgericht, das auf der
+                                    Zunge zergeht.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">90 min</p>
+                                </div>
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <button class="toggle-category">Kategorie öffnen</button>
                     <br>
 
-                        <!-- vorspeisen -->
+                </section>
 
-                        <section class="category">
-                            <p><b>Vorspeisen</b></p>
-       
-                            <div class="dish-list">
+                <!-- desserts -->
+                <section class="category">
+                    <p><b>Desserts</b></p>
 
-                               <!-- Sichtbares gericht -->
-                                <div class="dish">
-                                    <img src="images_Ukraine/krabsalat.png" alt="Krabbenstäbchen-Salat" >
-                                    <div class="info">
-                                        <h3>Krabbenstäbchen-Salat</h3>
-                                        <br>
-                                        <p>Ein moderner Klassiker der ukrainischen Küche aus Krabbenstäbchen, süßem Mais, frischen Gurken und Eiern. Er wird mit Mayonnaise angerichtet und für das typische Aroma mit frischem Dill verfeinert.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">30 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
+                    <div class="dish-list">
+
+                        <!-- Sichtbares gericht -->
+                        <div class="dish">
+                            <img src="images_Ukraine/Lwiwer Quarkkuchen.png" alt="Lwiwer Quarkkuchen">
+                            <div class="info">
+                                <h3>Lwiwer Quarkkuchen</h3>
+                                <br>
+                                <p>Ein eleganter, saftiger Käsekuchen aus feinem Quark mit Rosinen, überzogen mit einer
+                                    glänzenden Schokoladenglasur. Er ist das kulinarische Wahrzeichen von Lwiw und
+                                    besticht durch seine dichte, cremige Textur.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">90 min</p>
                                 </div>
-
-                                <!-- unsichtbare gerichte -->
-                                 <div class="dish hidden">
-                                    <img src="images_Ukraine/salat2.png" alt="Transkarpatiens Snack">
-                                    <div class="info">
-                                        <h3>Transkarpatiens Snack</h3>
-                                        <br>
-                                        <p>Knackiges Sauerkraut mit gesalzenen Waldpilzen, verfeinert mit aromatischem Öl und Zwiebeln. Eine einfache, authentische Vorspeise, die den besonderen Charakter der Karpaten-Küche widerspiegelt.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">15 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                                <div class="dish hidden">
-                                    <img src="images_Ukraine/schuba.png" alt="Schuba">
-                                    <div class="info">
-                                        <h3>Schuba (Hering im Pelzmantel)</h3>
-                                        <br>
-                                        <p>Ein geschichteter Festtagssalat aus gesalzenem Hering, gekochtem Gemüse wie Rote Bete, Kartoffeln und Karotten sowie Eiern. Die charakteristische violette Farbe entsteht durch die oberste Schicht Rote Bete, die mit einer feinen Mayonnaise-Haube überzogen wird.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">90 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
                             </div>
-                                    <button class="toggle-category">Kategorie öffnen</button>
-                                    <br>
-                        </section>
+                        </div>
 
-                        
-                        <!-- hauptgänge -->
-
-                        <section class="category">
-                            <p><b>Hauptgänge</b></p>
-       
-                            <div class="dish-list">
-
-                             <!-- Sichtbares gericht -->
-                                <div class="dish">
-                                    <img src="images_Ukraine/wareniki.png" alt="Wareniki" >
-                                    <div class="info">
-                                        <h3>Wareniki</h3>
-                                        <br>
-                                        <p>Handgeformte Teigtaschen mit einer Füllung aus Kartoffelpüree und Röstzwiebeln. Ein echtes Trostessen, das perfekt mit geschmolzener Butter oder saurer Sahne harmoniert.</p>                                       
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">65 min</p>
-                                        </div>
-                                        <button class="recipe-btn" data-url="rezept.html"><h4>zum Gericht</h4></button>
-                                    </div>
+                        <!-- unsichtbare gerichte -->
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/Werhuny.png" alt="Werhuny">
+                            <div class="info">
+                                <h3>Werhuny</h3>
+                                <br>
+                                <p>Traditionelles, in Öl ausgebackenes Hefegebäck, das oft mit Puderzucker bestreut
+                                    wird. Diese knusprigen Teigstreifen sind ein beliebter Snack zu Tee oder Honig und
+                                    erinnern an eine süße Kindheit.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">30 min</p>
                                 </div>
-
-                             <!-- unsichtbare gerichte -->
-                                 <div class="dish hidden">
-                                    <img src="images_Ukraine/borsch.png" alt="Borschtsch">
-                                    <div class="info">
-                                        <h3>Borschtsch</h3>
-                                        <br>
-                                        <p>Eine herzhafte Rote-Bete-Suppe mit Rindfleisch, Weißkohl, Kartoffeln und Karotten. Sie wird traditionell mit einem Klecks Schmand und frischem Knoblauch-Pampuschki serviert.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">120 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                                <div class="dish hidden">
-                                    <img src="images_Ukraine/golubtsi.png" alt="Holubtsi">
-                                    <div class="info">
-                                        <h3>Holubtsi</h3>
-                                        <br>
-                                        <p>Zarte Kohlblätter, gefüllt mit einer Mischung aus Hackfleisch und Reis, geschmort in einer aromatischen Tomaten-Schmand-Sauce. Ein herzhaftes Hauptgericht, das auf der Zunge zergeht.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">90 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
                             </div>
-                                    <button class="toggle-category">Kategorie öffnen</button>
-                                    <br>
+                        </div>
 
-                        </section>
-
-                        <!-- desserts -->
-                        <section class="category">
-                            <p><b>Desserts</b></p>
-       
-                            <div class="dish-list">
-
-                             <!-- Sichtbares gericht -->
-                                <div class="dish">
-                                    <img src="images_Ukraine/Lwiwer Quarkkuchen.png" alt="Lwiwer Quarkkuchen" >
-                                    <div class="info">
-                                        <h3>Lwiwer Quarkkuchen</h3>
-                                        <br>
-                                        <p>Ein eleganter, saftiger Käsekuchen aus feinem Quark mit Rosinen, überzogen mit einer glänzenden Schokoladenglasur. Er ist das kulinarische Wahrzeichen von Lwiw und besticht durch seine dichte, cremige Textur.</p>                                       
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">90 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
+                        <div class="dish hidden">
+                            <img src="images_Ukraine/Backäpfel mit Honig.png" alt="Backäpfel mit Honig">
+                            <div class="info">
+                                <h3>Backäpfel mit Honig</h3>
+                                <br>
+                                <p>Ein gesundes und aromatisches Dessert aus dem Ofen, gefüllt mit Honig, Walnüssen und
+                                    Zimt. Die Kombination aus weichen Äpfeln und der süßen Füllung ist ein zeitloser
+                                    Klassiker der ukrainischen Hausküche.</p>
+                                <br>
+                                <div id="zeitangabe">
+                                    <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
+                                    <p class="kleintext">40 min</p>
                                 </div>
-
-                             <!-- unsichtbare gerichte -->
-                                 <div class="dish hidden">
-                                    <img src="images_Ukraine/Werhuny.png" alt="Werhuny">
-                                    <div class="info">
-                                        <h3>Werhuny</h3>
-                                        <br>
-                                        <p>Traditionelles, in Öl ausgebackenes Hefegebäck, das oft mit Puderzucker bestreut wird. Diese knusprigen Teigstreifen sind ein beliebter Snack zu Tee oder Honig und erinnern an eine süße Kindheit.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">30 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                                <div class="dish hidden">
-                                    <img src="images_Ukraine/Backäpfel mit Honig.png" alt="Backäpfel mit Honig">
-                                    <div class="info">
-                                        <h3>Backäpfel mit Honig</h3>
-                                        <br>
-                                        <p>Ein gesundes und aromatisches Dessert aus dem Ofen, gefüllt mit Honig, Walnüssen und Zimt. Die Kombination aus weichen Äpfeln und der süßen Füllung ist ein zeitloser Klassiker der ukrainischen Hausküche.</p>
-                                        <br>
-                                        <div id="zeitangabe">
-                                            <img class="uhr" src="images_Startseite/clock.svg" alt="Uhr">
-                                            <p class="kleintext">40 min</p>
-                                        </div>
-                                        <button class="recipe-btn"><h4>zum Gericht</h4></button>
-                                    </div>
-                                </div>
-
-                
+                                <button class="recipe-btn">
+                                    <h4>zum Gericht</h4>
+                                </button>
                             </div>
-                                    <button class="toggle-category">Kategorie öffnen</button>
+                        </div>
 
-                        </section>
-            
-                </div>
-                <!-- LAYOUT right-->
-                    <div class="right-side">
-                        <h2>kulinarische Vielfalt</h2>  <br>
-                           
-                        <section class="new" >
-                            <h3>Regionale Geschmacksvielfalt</h3>  <br>
-                            <p>Die kulinarische Landkarte der Ukraine besticht durch eine beeindruckende Vielfalt, die an der Schnittstelle verschiedener Kulturen und Landschaften entstanden ist. Während im Westen, in den Karpaten, herzhafte Gerichte aus Pilzen und Milchprodukten wie würziger Schafskäse (Brynza) oder reichhaltige Pilzsuppen dominieren, glänzt der Süden am Schwarzen Meer mit fangfrischem Fisch und sonnengereiftem Gemüse. Jede Region nutzt ihre eigenen Schätze: von Wildspezialitäten aus den nördlichen Wäldern bis hin zu den saftigen Tomaten und Auberginen aus den sonnigen Steppen von Cherson.</p>
-                        </section>
-                            <br>
-                        <section class="new">
-                            <h3>Die Kunst der ukrainischen Gastfreundschaft</h3> <br>
-                            <p>Ein Markenzeichen der ukrainischen Küche ist die Meisterschaft in der Zubereitung von Fleisch- und Gemüsegerichten, die oft durch traditionelles Schmoren und Backen veredelt werden. Berühmte Kohlrouladen (Holubtsi), gefülltes Gemüse und eine breite Palette an Fleischdelikatessen – von hausgemachter Wurst bis hin zu geräuchertem Speck mit Knoblauch – spiegeln die Großzügigkeit des Landes wider. Eine besondere Rolle spielen Saucen auf Basis von hausgemachtem Schmand und frischen Kräutern, die den natürlichen Geschmack lokaler Produkte unterstreichen und jeder Mahlzeit eine heimelige Note verleihen.</p>
-                        </section>
-                            <br>
-                        <section class="new">
-                            <h3 >Moderne Interpretation und Tradition</h3> <br>
-                            <p>Heute erlebt die ukrainische Gastronomie eine Renaissance und wandelt sich zu einer modernen Kunstform. In Städten wie Kyjiw oder Lwiw interpretieren Köche traditionelle Rezepte neu und setzen dabei konsequent auf saisonale, lokale Zutaten wie Spargel, Ziegenkäse oder Flussforellen. Abgerundet wird das kulinarische Erlebnis durch traditionelle Getränke: aromatischer Usvar aus geräucherten Trockenfrüchten oder Beeren-Liköre (Nalyvka) ergänzen die kräftigen Aromen perfekt und betonen die tiefe Verbindung zwischen der Kulinarik, der Natur und der Geschichte des Landes.</p>
-                        </section>
+
                     </div>
-            </section>
+                    <button class="toggle-category">Kategorie öffnen</button>
 
-  
+                </section>
 
-    
-
-
-
-            <!-- ---------------------------------------------------------------- -->
-        </main >
-
-
-
-        <!-- FUßLEISTE -->
-        <footer>
-            <div class="footer-left">
-                <p>© 2026 The Global Kitchen</p>
             </div>
+            <!-- LAYOUT right-->
+            <div class="right-side">
+                <h2>kulinarische Vielfalt</h2> <br>
 
-            <div class="footer-center">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <p>Social Media:</p>
+                <section class="new">
+                    <h3>Regionale Geschmacksvielfalt</h3> <br>
+                    <p>Die kulinarische Landkarte der Ukraine besticht durch eine beeindruckende Vielfalt, die an der
+                        Schnittstelle verschiedener Kulturen und Landschaften entstanden ist. Während im Westen, in den
+                        Karpaten, herzhafte Gerichte aus Pilzen und Milchprodukten wie würziger Schafskäse (Brynza) oder
+                        reichhaltige Pilzsuppen dominieren, glänzt der Süden am Schwarzen Meer mit fangfrischem Fisch
+                        und sonnengereiftem Gemüse. Jede Region nutzt ihre eigenen Schätze: von Wildspezialitäten aus
+                        den nördlichen Wäldern bis hin zu den saftigen Tomaten und Auberginen aus den sonnigen Steppen
+                        von Cherson.</p>
+                </section>
+                <br>
+                <section class="new">
+                    <h3>Die Kunst der ukrainischen Gastfreundschaft</h3> <br>
+                    <p>Ein Markenzeichen der ukrainischen Küche ist die Meisterschaft in der Zubereitung von Fleisch-
+                        und Gemüsegerichten, die oft durch traditionelles Schmoren und Backen veredelt werden. Berühmte
+                        Kohlrouladen (Holubtsi), gefülltes Gemüse und eine breite Palette an Fleischdelikatessen – von
+                        hausgemachter Wurst bis hin zu geräuchertem Speck mit Knoblauch – spiegeln die Großzügigkeit des
+                        Landes wider. Eine besondere Rolle spielen Saucen auf Basis von hausgemachtem Schmand und
+                        frischen Kräutern, die den natürlichen Geschmack lokaler Produkte unterstreichen und jeder
+                        Mahlzeit eine heimelige Note verleihen.</p>
+                </section>
+                <br>
+                <section class="new">
+                    <h3>Moderne Interpretation und Tradition</h3> <br>
+                    <p>Heute erlebt die ukrainische Gastronomie eine Renaissance und wandelt sich zu einer modernen
+                        Kunstform. In Städten wie Kyjiw oder Lwiw interpretieren Köche traditionelle Rezepte neu und
+                        setzen dabei konsequent auf saisonale, lokale Zutaten wie Spargel, Ziegenkäse oder
+                        Flussforellen. Abgerundet wird das kulinarische Erlebnis durch traditionelle Getränke:
+                        aromatischer Usvar aus geräucherten Trockenfrüchten oder Beeren-Liköre (Nalyvka) ergänzen die
+                        kräftigen Aromen perfekt und betonen die tiefe Verbindung zwischen der Kulinarik, der Natur und
+                        der Geschichte des Landes.</p>
+                </section>
             </div>
+        </section>
 
-            <div class="footer-right">
-                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="images/youtube.svg" alt="Youtube"></a>
-            </div>
-        </footer>
+
+
+
+
+
+
+        <!-- ---------------------------------------------------------------- -->
+    </main>
+
+
+
+    <!-- FUßLEISTE -->
+    <footer>
+        <div class="footer-left">
+            <p>© 2026 The Global Kitchen</p>
+        </div>
+
+        <div class="footer-center">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <p>Social Media:</p>
+        </div>
+
+        <div class="footer-right">
+            <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="images/youtube.svg" alt="Youtube"></a>
+        </div>
+    </footer>
     </div>
 
     <!-- ÜBERGANG ZWISCHEN DEN SEITEN -->
