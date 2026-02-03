@@ -198,7 +198,7 @@ header img {
     text-decoration: none;
 }
 
-.main-nav a:active {
+.main-nav a:hover {
     color: var(--webwhite);
     text-decoration: none;
     font-weight: 700;
@@ -219,7 +219,7 @@ header img {
     z-index: 2100;
 }
 
-.dropdown:active .menu_content {
+.dropdown:hover .menu_content {
     display: block;
 }
 
@@ -234,7 +234,7 @@ li.open>.submenu,
     padding: 8px 20px 10px 20px;
 }
 
-.menu_content li a:active {
+.menu_content li a:hover {
     background-color: var(--webblue);
 }
 
@@ -260,9 +260,9 @@ li.open>.submenu,
 
 }
 
-.menu_content li:active>.submenu,
+.menu_content li:hover>.submenu,
 .menu_content li:focus-within>.submenu,
-.submenu:active {
+.submenu:hover {
     display: block;
 }
 
@@ -453,7 +453,7 @@ footer img:active {
         transform: rotate(180deg);
     }
 
-    .menu_content li a:active {
+    .menu_content li a:hover {
         background-color: var(--weborange);
 
     }
@@ -1670,36 +1670,11 @@ ol li::marker {
         transform: scale(1.1);
     }
 
-    .main-nav a:hover {
-        color: var(--webwhite);
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .dropdown:hover .menu_content {
-        display: block;
-    }
-
-    .menu_content li a:hover {
-        background-color: var(--webblue);
-    }
-
-    .menu_content li:hover>.submenu,
-    .menu_content li:focus-within>.submenu,
-    .submenu:hover {
-        display: block;
-    }
-
     footer img:hover {
         transform: scale(1.1);
     }
 
     @media (max-width: 1000px) {
-        .menu_content li a:hover {
-            background-color: var(--weborange);
-
-        }
-
         .open-sidebar-button:hover .burger-icon-default {
             display: none;
         }
@@ -1757,7 +1732,7 @@ ol li::marker {
     }
 
     /* Ukraineseite */
-    .recipe-btn:active {
+    .recipe-btn:hover {
         background-color: var(--webblue);
 
     }
