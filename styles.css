@@ -160,13 +160,13 @@ header img {
     z-index: 9999;
 }
 
-#theme-switch:hover {
+#theme-switch:active {
     cursor: pointer;
     border: 2px solid;
     border-color: var(--webwhite);
 }
 
-#theme-switch svg:hover {
+#theme-switch svg:active {
     transform: scale(1.1);
 }
 
@@ -198,7 +198,7 @@ header img {
     text-decoration: none;
 }
 
-.main-nav a:hover {
+.main-nav a:active {
     color: var(--webwhite);
     text-decoration: none;
     font-weight: 700;
@@ -219,7 +219,7 @@ header img {
     z-index: 2100;
 }
 
-.dropdown:hover .menu_content {
+.dropdown:active .menu_content {
     display: block;
 }
 
@@ -234,7 +234,7 @@ li.open>.submenu,
     padding: 8px 20px 10px 20px;
 }
 
-.menu_content li a:hover {
+.menu_content li a:active {
     background-color: var(--webblue);
 }
 
@@ -260,9 +260,9 @@ li.open>.submenu,
 
 }
 
-.menu_content li:hover>.submenu,
+.menu_content li:active>.submenu,
 .menu_content li:focus-within>.submenu,
-.submenu:hover {
+.submenu:active {
     display: block;
 }
 
@@ -318,7 +318,7 @@ footer img {
     transition: transform 0.2s;
 }
 
-footer img:hover {
+footer img:active {
     transform: scale(1.1);
 }
 
@@ -453,7 +453,7 @@ footer img:hover {
         transform: rotate(180deg);
     }
 
-    .menu_content li a:hover {
+    .menu_content li a:active {
         background-color: var(--weborange);
 
     }
@@ -475,11 +475,11 @@ footer img:hover {
         display: none;
     }
 
-    .open-sidebar-button:hover .burger-icon-default {
+    .open-sidebar-button:active .burger-icon-default {
         display: none;
     }
 
-    .open-sidebar-button:hover .burger-icon-hover {
+    .open-sidebar-button:active .burger-icon-hover {
         display: block;
     }
 
@@ -611,7 +611,7 @@ footer img:hover {
     stroke: var(--webgray);
 }
 
-#mapSection path:hover {
+#mapSection path:active {
     fill: var(--weborange);
     stroke-width: 0.3em;
 }
@@ -658,7 +658,7 @@ footer img:hover {
 
 }
 
-.zoom-controls button:hover {
+.zoom-controls button:active {
     border: 2px solid var(--webwhite);
 }
 
@@ -737,7 +737,7 @@ footer img:hover {
     transition: all 0.2s ease;
 }
 
-#tofood:hover {
+#tofood:active {
     color: var(--webwhite);
     background-color: var(--weborange);
     cursor: pointer;
@@ -748,7 +748,7 @@ footer img:hover {
     filter: invert();
 }
 
-.darkmode #tofood:hover {
+.darkmode #tofood:active {
     background-color: var(--webgray);
     color: var(--webblack);
     font-weight: 600;
@@ -858,7 +858,7 @@ footer img:hover {
     flex-shrink: 0;
 }
 
-.carousel-nav-btn:hover {
+.carousel-nav-btn:active {
     background-color: var(--weborange);
     transform: scale(1.1);
 }
@@ -899,7 +899,7 @@ footer img:hover {
     scroll-snap-stop: always;
 }
 
-.otherDish:hover {
+.otherDish:active {
     transform: translateY(-10px);
 }
 
@@ -1534,6 +1534,7 @@ ol li::marker {
 
 .portionsControls>button:active {
     background-color: var(--weborange);
+    border-color: var(--weborange);
 }
 
 /* Kochmodus-Button */
@@ -1548,6 +1549,9 @@ ol li::marker {
     color: var(--webwhite);
 }
 
+.cookingMode:active {
+    background-color: var(--weborange);
+}
 
 /* PRINT-BUTTON */
 .printButton {
@@ -1565,7 +1569,7 @@ ol li::marker {
 }
 
 .printButton:active {
-    background-color: var(--webblue);
+    background-color: var(--weborange);
 }
 
 /* ZÄHLT FÜR DIE DEN DRUCKMODUS */
@@ -1681,6 +1685,92 @@ ol li::marker {
 
 /* NUR ausführen, wenn das Gerät wirklich hovern kann */
 @media (hover:hover) {
+
+    /* Header & Footer */
+    #theme-switch:hover {
+        cursor: pointer;
+        border: 2px solid;
+        border-color: var(--webwhite);
+    }
+
+    #theme-switch svg:hover {
+        transform: scale(1.1);
+    }
+
+    .main-nav a:hover {
+        color: var(--webwhite);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .dropdown:hover .menu_content {
+        display: block;
+    }
+
+    .menu_content li a:hover {
+        background-color: var(--webblue);
+    }
+
+    .menu_content li:hover>.submenu,
+    .menu_content li:focus-within>.submenu,
+    .submenu:hover {
+        display: block;
+    }
+
+    footer img:hover {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 1000px) {
+        .menu_content li a:hover {
+            background-color: var(--weborange);
+
+        }
+
+        .open-sidebar-button:hover .burger-icon-default {
+            display: none;
+        }
+
+        .open-sidebar-button:hover .burger-icon-hover {
+            display: block;
+        }
+    }
+
+    /* Startseite */
+    #mapSection path:hover {
+        fill: var(--weborange);
+        stroke-width: 0.3em;
+    }
+
+    .zoom-controls button:hover {
+        border: 2px solid var(--webwhite);
+    }
+
+    #tofood:hover {
+        color: var(--webwhite);
+        background-color: var(--weborange);
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .darkmode #tofood:hover {
+        background-color: var(--webgray);
+        color: var(--webblack);
+        font-weight: 600;
+    }
+
+    .carousel-nav-btn:hover {
+        background-color: var(--weborange);
+        transform: scale(1.1);
+    }
+
+    .otherDish:active {
+        transform: translateY(-10px);
+    }
+
+
+
+    /* Rezeptseite */
     .printButton:hover {
         background-color: var(--weborange);
     }
