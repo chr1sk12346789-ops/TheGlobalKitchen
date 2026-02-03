@@ -1209,7 +1209,7 @@ footer img:active {
 
 }
 
-.recipe-btn:hover {
+.recipe-btn:active {
     background-color: var(--webblue);
 
 }
@@ -1399,14 +1399,13 @@ footer img:active {
 
 
 /* BROTKRUMNAVIGATION */
-/* man gestaltet die Liste */
+
 .breadcrumb {
     padding: 15px 50px;
     list-style: none;
     background-color: var(--webblue);
 }
 
-/* damit die Listenelemente nebeneinander liegen */
 .breadcrumb li {
     display: inline;
     font-family: "Montserrat", sans-serif;
@@ -1415,14 +1414,12 @@ footer img:active {
     font-weight: 200;
 }
 
-/*fügt > nach den Listenelementen ein, die vor dem letzten kommen*/
 .breadcrumb li+li:before {
     content: ">\00a0";
     color: var(--webwhite);
     padding: 4px;
 }
 
-/* wie alle Links aussehen sollen */
 .breadcrumb li a {
     color: var(--webwhite);
     text-decoration: none;
@@ -1439,29 +1436,24 @@ footer img:active {
 }
 
 /* GRID CONTENT BEREICH */
-/*Grid, für aside-Bereich und den Bereich rechts*/
 .contentPage {
     background-color: var(--webwhite);
     display: grid;
     width: 100%;
     min-height: 100%;
     grid-template-columns: minmax(325px, 25%) 1fr;
-    /* minmax: damit linke Spalt responsiv Verhaltet bis zu 325px (da Breite fix, damit Inhalt nicht zerquetscht) */
     grid-template-areas:
         'aside content';
 }
 
-/*Bereich rechts (Bild und Zubereitungsschritte)*/
 .content {
     background-color: var(--webwhite);
     color: var(--webblack);
     height: auto;
     grid-area: content;
-    /* Die Prozentwerte ermöglichen es, dass die Abstände wenn sich das Fenster verkleinert, horizontal auch verkleinert */
     padding: 50px 10% 50px 10%;
 }
 
-/* Linker Bereich */
 aside {
     background-color: var(--webblack);
     padding: 20px 30px 25px 30px;
@@ -1470,7 +1462,7 @@ aside {
 
 
 /* INHALT IM RECHTEN CONTENT BEREICH */
-/* Bild auf der Unterseite */
+
 .image {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -1479,20 +1471,18 @@ aside {
     object-fit: cover;
 }
 
-/* Aufzählungsnummern vor den Zubereitungsschritten */
 ol li::marker {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
 }
 
-/* vertikale Abstände zwischen den einzelnen Zubereitungsschritten */
 .content li {
     margin-bottom: 25px;
 }
 
 
 /* PORTIONSMENGEN-ÄNDER-BEREICH / ALLE BUTTONS */
-/* Bereich in den alle Buttons stehen */
+
 .buttonCollection {
     width: 80%;
     margin: 0 auto;
@@ -1502,14 +1492,11 @@ ol li::marker {
     border-radius: 15px;
     padding: 10px;
     display: flex;
-    /* ordnet portionsControls und cookingMode übereinander an */
     flex-direction: column;
-    /* sorgt dafür das portionsControls oben am weißen Rand liegen und cooking Mode unten */
     justify-content: space-between;
     align-items: center;
 }
 
-/* Bereich in den + und - Button stehen */
 .portionsControls {
     width: 100%;
     display: flex;
@@ -1553,7 +1540,7 @@ ol li::marker {
     background-color: var(--weborange);
 }
 
-/* PRINT-BUTTON */
+/* print-Button */
 .printButton {
     width: auto;
     background-color: var(--webblue);
@@ -1584,10 +1571,9 @@ ol li::marker {
         display: none;
     }
 
-    /* auf alle verbleibende Elemente wird angewendet */
     * {
         position: static !important;
-        /* Hebt fixed, absolute und sticky auf; sonst wird Text an manchen Stellen überdeckt */
+        /* Hebt fixed, absolute und sticky auf */
     }
 
 }
@@ -1600,12 +1586,10 @@ ol li::marker {
     color: var(--webwhite);
 }
 
-/*das die liste keine Bullet-Points hat*/
 .ingredients ul {
     list-style-type: none;
 }
 
-/* Zutaten Liste formatieren */
 .ingredient-amount {
     display: inline-block;
     text-align: left;
@@ -1613,7 +1597,6 @@ ol li::marker {
     margin-right: 5px;
 }
 
-/* UMBRUCH FÜR DEN HANDYMODUS */
 @media (max-width:768px) {
     .headline {
         float: center;
@@ -1623,7 +1606,6 @@ ol li::marker {
         display: none;
     }
 
-    /* Grid, um die Inhalte neu zu strukturieren */
     .contentPage {
         display: grid;
         grid-template-columns: 1fr;
@@ -1634,7 +1616,6 @@ ol li::marker {
 
     aside {
         padding: 30px;
-        /* Seitenbereich auf die ganze breite ziehen */
     }
 
     .content {
@@ -1642,7 +1623,6 @@ ol li::marker {
         height: 100%;
     }
 
-    /* Buttons zentrieren */
     .buttonCollection {
         width: 70%;
         margin: 0 auto;
@@ -1654,22 +1634,16 @@ ol li::marker {
         padding-left: 0px;
     }
 
-    /* damit + und - Button mitwächst, da im Handy Modus sie mehr Platz haben und sonst sehr klein erscheinen*/
     .portionsControls button {
-        /* Buttons wachsen mit */
         flex-grow: 1;
-        /* Damit Buttons nicht zu breit werden */
         max-width: 120px;
-        /* HIER: Die Höhe bleibt nun konstant wie zuvor */
         height: 40px;
     }
 
-    /* BREADCRUMB AUFLÖSEN */
     .breadcrumb {
         display: none;
     }
 
-    /* Headline Bereich optisch anpassen */
     .top {
         display: flex;
         justify-content: center;
@@ -1677,14 +1651,13 @@ ol li::marker {
 
     }
 
-    /* Rezept ausdrucken verschwindet und nur noch das Icon vom Drucken ist da */
     .printButton>p {
         display: none;
     }
 }
 
-/* NUR ausführen, wenn das Gerät wirklich hovern kann */
-@media (hover:hover) {
+/* Wird ausgeführt, wenn das Gerät hoverbar ist */
+@media (hover:hover) and (pointer:fine) {
 
     /* Header & Footer */
     #theme-switch:hover {
@@ -1764,7 +1737,7 @@ ol li::marker {
         transform: scale(1.1);
     }
 
-    .otherDish:active {
+    .otherDish:hover {
         transform: translateY(-10px);
     }
 
@@ -1781,5 +1754,11 @@ ol li::marker {
 
     button:hover {
         border-color: var(--weborange);
+    }
+
+    /* Ukraineseite */
+    .recipe-btn:active {
+        background-color: var(--webblue);
+
     }
 }
