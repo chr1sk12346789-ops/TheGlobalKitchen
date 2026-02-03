@@ -1264,14 +1264,15 @@ footer img:hover {
         gap: 10px;
         padding: 15px 0;
         width: auto;
+        align-items: flex-start;
     }
 
     .dish>img {
         width: 150px;
         height: 150px;
-        object-fit: cover;
         padding-left: 15px;
-        padding-right: 350px;
+        border-radius: 0px;
+
     }
 
     .info h3 {
@@ -1495,7 +1496,6 @@ ol li::marker {
 /* + und - Button*/
 .portionsControls>button {
     width: 50px;
-    display: inline-flex;
     justify-content: center;
     align-items: center;
     font-family: "Montserrat", sans-serif;
@@ -1646,22 +1646,3 @@ ol li::marker {
     }
 }
 
-/* ZÄHLT FÜR DIE DEN DRUCKMODUS */
-@media print {
-
-    .printButton,
-    footer,
-    header,
-    .top,
-    .buttonCollection,
-    .breadcrumb {
-        display: none;
-    }
-
-    /* auf alle verbleibende Elemente wird angewendet */
-    * {
-        position: static !important;
-        /* Hebt fixed, absolute und sticky auf; sonst wird Text an manchen Stellen überdeckt */
-    }
-
-}
