@@ -531,7 +531,7 @@ footer img:hover {
     }
 
     .top {
-        height: 80px;
+        height: 50px;
     }
 }
 
@@ -1010,6 +1010,10 @@ footer img:hover {
         height: 1000px;
     }
 
+    #dish_circle {
+        margin-left: 15px;
+    }
+
     /* ABSCHNITT FÜR WEITERE GERICHTE */
     #otherDishes {
         padding-left: 20px;
@@ -1245,6 +1249,7 @@ footer img:hover {
             /*zuerst right dann left*/
             "right"
             "left";
+
     }
 
     .left-side,
@@ -1255,8 +1260,10 @@ footer img:hover {
 
     .dish {
         flex-direction: column;
+        display: flex;
         gap: 10px;
         padding: 15px 0;
+        width: auto;
     }
 
     .dish>img {

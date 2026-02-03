@@ -11,7 +11,7 @@ let activeMapPoint = null;       // SVG-Koordinaten des gewählten Landes
 // ----------------------------------------------------------------------------------------------------------
 //  MAP ZOOM & PAN FUNKTIONEN
 //  Berechnet die Transformation (Skalierung & Verschiebung) der Weltkarte
- 
+
 function updateMapTransform() {
     const mapElement = document.querySelector('.map-container');
     if (!mapElement) return;
@@ -44,32 +44,54 @@ function initMapInteractions() {
 
     // Drag-and-Drop Logik (Pan)
     if (mapElement) {
-        mapElement.onmousedown = (e) => {
+        // Kombinierte Funktion für Start (Maus & Touch)
+        const handleStart = (e) => {
             isDragging = true;
-            startX = e.clientX - tx;
-            startY = e.clientY - ty;
+            // Wählt clientX/Y von Maus oder dem ersten Finger (touch)
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            startX = clientX - tx;
+            startY = clientY - ty;
             mapElement.style.cursor = 'grabbing';
         };
 
-        window.onmousemove = (e) => {
+        // Kombinierte Funktion für Bewegung
+        const handleMove = (e) => {
             if (!isDragging) return;
-            // Dynamische Begrenzung der Verschiebung basierend auf Zoomstufe
+
+            // Verhindert das Scrollen der Seite beim Ziehen auf dem Handy
+            if (e.type === 'touchmove') e.preventDefault();
+
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
             const limitX = (currentZoom - 0.9) * 600;
             const limitY = (currentZoom - 0.9) * 300;
 
-            let newX = e.clientX - startX;
-            let newY = e.clientY - startY;
+            let newX = clientX - startX;
+            let newY = clientY - startY;
 
-            // Anwenden der Limits 
             tx = Math.max(-limitX, Math.min(limitX, newX));
             ty = Math.max(-limitY, Math.min(limitY, newY));
             updateMapTransform();
         };
 
-        window.onmouseup = () => {
+        // Kombinierte Funktion für Ende
+        const handleEnd = () => {
             isDragging = false;
             mapElement.style.cursor = 'grab';
         };
+
+        // Maus-Events (Desktop)
+        mapElement.onmousedown = handleStart;
+        window.onmousemove = handleMove;
+        window.onmouseup = handleEnd;
+
+        // Touch-Events (Mobile)
+        mapElement.addEventListener('touchstart', handleStart, { passive: false });
+        window.addEventListener('touchmove', handleMove, { passive: false });
+        window.addEventListener('touchend', handleEnd);
     }
 }
 
@@ -87,7 +109,7 @@ function handleCountryClick(e) {
     const countryId = target.id;
     // Zugriff auf die externe SimpleMaps Datenquelle
     const labels = typeof simplemaps_worldmap_mapdata !== 'undefined' ? simplemaps_worldmap_mapdata.labels : {};
-    
+
     // Passenden Datensatz anhand der ID suchen
     let foundData = Object.values(labels).find(label => label.parent_id === countryId);
 
