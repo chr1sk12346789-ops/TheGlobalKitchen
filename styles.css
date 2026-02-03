@@ -1738,8 +1738,13 @@ ol li::marker {
     }
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 :focus {
     outline: none;
+
 }
 
 :focus-visible {
