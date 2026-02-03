@@ -1305,12 +1305,36 @@ footer img:hover {
         /*Entfernt jeden äußeren Seitenabstand links.*/
     }
 
+    .toggle-category {
+        background-color: var(--webgray);
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 15px;
+        display: block;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 12pt;
+        font-style: normal;
+    }
+
+
+    .hidden {
+        display: none;
+    }
+
     .recipe-btn {
         display: inline-block;
         /*Element nimmt es  nur so viel Platz ein, wie der Inhalt (der Text "zum Gericht") wirklich braucht*/
         margin-top: 5px;
         margin-right: 15px;
     }
+
 
     /* Suche alle <section>-Elemente mit der Klasse .new, denen bereits eine <section> mit der Klasse .new vorausgegangen ist 
     (innerhalb desselben Containers .right-side). Die erste Sektion wird ignoriert (da vor ihr keine andere .new-Sektion steht)*/
@@ -1544,6 +1568,26 @@ ol li::marker {
     background-color: var(--webblue);
 }
 
+/* ZÄHLT FÜR DIE DEN DRUCKMODUS */
+@media print {
+
+    .printButton,
+    footer,
+    header,
+    .top,
+    .buttonCollection,
+    .breadcrumb {
+        display: none;
+    }
+
+    /* auf alle verbleibende Elemente wird angewendet */
+    * {
+        position: static !important;
+        /* Hebt fixed, absolute und sticky auf; sonst wird Text an manchen Stellen überdeckt */
+    }
+
+}
+
 /* ZUTATENLISTE */
 .ingredients {
     padding-top: 15px;
@@ -1567,6 +1611,10 @@ ol li::marker {
 
 /* UMBRUCH FÜR DEN HANDYMODUS */
 @media (max-width:768px) {
+    .headline {
+        float: center;
+    }
+
     .marker {
         display: none;
     }
@@ -1583,13 +1631,11 @@ ol li::marker {
     aside {
         padding: 30px;
         /* Seitenbereich auf die ganze breite ziehen */
-        grid-area: aside;
     }
 
     .content {
         padding: 30px;
         height: 100%;
-        grid-area: content;
     }
 
     /* Buttons zentrieren */
@@ -1621,8 +1667,10 @@ ol li::marker {
 
     /* Headline Bereich optisch anpassen */
     .top {
-        margin: 120px auto 20px 100px;
-        color: var(--webwhite);
+        display: flex;
+        justify-content: center;
+        margin: 120px auto 20px auto;
+
     }
 
     /* Rezept ausdrucken verschwindet und nur noch das Icon vom Drucken ist da */
@@ -1645,4 +1693,3 @@ ol li::marker {
         border-color: var(--weborange);
     }
 }
-
