@@ -14,11 +14,6 @@
     outline-offset: 2px;
 }
 
-:active {
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-}
-
 body {
     background-color: var(--weborange);
 }
