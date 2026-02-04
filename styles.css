@@ -1,11 +1,11 @@
 * {
     margin: 0px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 :focus {
     outline: none;
     background-color: rgba(0, 0, 0, 0);
-
 }
 
 :focus-visible {
