@@ -102,39 +102,49 @@ function handleCountryClick(e) {
     const svg = document.getElementById("map-svg");
     if (!svg) return;
 
-    // Prüfen, ob ein Land (Path oder Group) getroffen wurde
-    const target = e.target.closest('path[id], g[id]');
+    const target = e.target.closest('path');
     if (!target || target.id === "map-svg") return;
 
-    const countryId = target.id;
-    // Zugriff auf die externe SimpleMaps Datenquelle
+    // Wir holen die Klasse ganz sicher als Text
+    let countryClass = target.getAttribute('class');
+    if (countryClass) {
+        countryClass = countryClass.split(' ')[0]; // Nur das erste Wort nehmen
+    }
+
+    // Wenn keine ID da ist, nehmen wir die Klasse
+    const countryId = target.id || countryClass;
+
     const labels = typeof simplemaps_worldmap_mapdata !== 'undefined' ? simplemaps_worldmap_mapdata.labels : {};
 
-    // Passenden Datensatz anhand der ID suchen
     let foundData = Object.values(labels).find(label => label.parent_id === countryId);
 
     if (foundData) {
-        // UI Texte im Panel aktualisieren
         document.getElementById("country_name").textContent = foundData.name;
         document.getElementById("dish_count").textContent = foundData.size || "0";
 
-        // Link zur entsprechenden Food-Seite anpassen
         const link = document.getElementById('tofood-link');
         if (link) link.href = foundData.name + '.html';
 
-        // Visuelle Markierung des gewählten Landes
+        // Alle alten Markierungen weg
         svg.querySelectorAll('.active-country').forEach(el => el.classList.remove('active-country'));
-        target.classList.add('active-country');
-        if (target.tagName.toLowerCase() === 'g') {
-            target.querySelectorAll('path').forEach(p => p.classList.add('active-country'));
+
+        // Markieren: Entweder per ID oder alle mit der gleichen Klasse
+        if (target.id) {
+            target.classList.add('active-country');
+        } else if (countryClass) {
+            // Wir suchen alle Pfade, die diese Klasse im Attribut stehen haben
+            const allPaths = svg.getElementsByTagName('path');
+            for (let i = 0; i < allPaths.length; i++) {
+                if (allPaths[i].getAttribute('class') && allPaths[i].getAttribute('class').includes(countryClass)) {
+                    allPaths[i].classList.add('active-country');
+                }
+            }
         }
 
-        // Klick-Punkt in SVG-Koordinatensystem umrechnen (wichtig für Zoom-Korrektur)
         const pt = svg.createSVGPoint();
         pt.x = e.clientX;
         pt.y = e.clientY;
         activeMapPoint = pt.matrixTransform(svg.getScreenCTM().inverse());
-
         updateElasticLine();
     }
 }
